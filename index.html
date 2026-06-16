@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://wrkmark.com">
   
   <title>Wrkmark — Prove how you work, not just what you make</title>
   <meta name="description" content="Wrkmark observes your work patterns and builds a verified behavioral profile. Open source. All data on your device.">
   
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Akshay Sharma">
+  <meta name="keywords" content="behavioral verification, work tracking, skill verification, developer tools, professional profile, AI era, privacy-first">
+  <meta name="theme-color" content="#10b981">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wrkmark.com">
   <meta property="og:title" content="Wrkmark">
   <meta property="og:description" content="Prove how you work, not just what you make.">
-  <meta property="og:url" content="https://wrkmark.com">
-  <meta property="og:type" content="website">
-  
+  <meta property="og:site_name" content="Wrkmark">
+  <meta property="og:image" content="https://wrkmark.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Wrkmark — Prove how you work">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wrkmark">
-  <meta name="twitter:description" content="Prove how you work, not just what you make.">
+  <meta name="twitter:title" content="Wrkmark — Prove how you work">
+  <meta name="twitter:description" content="Behavioral verification for the AI era. Open source. All data on your device.">
+  <meta name="twitter:image" content="https://wrkmark.com/og-image.png">
   
   <!-- Inline SVG Favicon (emerald circle with W) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2310b981'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='%230a0f0d' font-weight='bold'%3EW%3C/text%3E%3C/svg%3E">
 
-  <!-- Google Fonts: DM Serif Display, Inter, JetBrains Mono -->
+  <!-- Google Fonts & Preconnect Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://tally.so">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Three.js CDN Setup -->
@@ -1116,6 +1133,31 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Wrkmark",
+    "description": "Behavioral verification desktop app for professionals in the AI era. Observes work patterns and builds a verified profile.",
+    "url": "https://wrkmark.com",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Windows, Linux",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Akshay Sharma",
+      "url": "https://github.com/AxaySharma"
+    },
+    "sameAs": [
+      "https://github.com/wrkmark/wrkmark-observer",
+      "https://github.com/wrkmark/wrkmark-app"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1126,17 +1168,17 @@
         <span class="nav-logo-dot">●</span>Wrkmark
       </a>
       <nav class="nav-links">
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="nav-link">Open source</a>
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="nav-link" title="View open source observer engine on GitHub">Open source</a>
         <a href="https://github.com/wrkmark/wrkmark-app" target="_blank" class="nav-link">GitHub</a>
         <a href="#download" class="nav-link">Download</a>
       </nav>
-      <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <div class="nav-mobile-menu" id="navMobile">
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank">Open source</a>
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" title="View open source observer engine on GitHub">Open source</a>
         <a href="https://github.com/wrkmark/wrkmark-app" target="_blank">GitHub</a>
         <a href="#download">Download</a>
         <a href="#waitlist">Join waitlist</a>
@@ -1164,7 +1206,7 @@
             Open source · Privacy-first · All data on your device
           </p>
         </div>
-        <div class="hero-canvas-container" id="three-canvas-container">
+        <div class="hero-canvas-container" id="three-canvas-container" role="img" aria-label="Interactive 3D particle visualization showing behavioral signals forming a profile">
           <!-- Fallback Radial Gradient if WebGL disabled -->
           <div class="hero-fallback-gradient"></div>
         </div>
@@ -1215,7 +1257,7 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
           </div>
-          <div class="terminal-content">
+          <div class="terminal-content" aria-live="polite" aria-label="Live signal feed">
             <!-- Appended lines stream here -->
           </div>
         </div>
@@ -1380,7 +1422,7 @@ const APPROVED_TYPES = ['session_start', 'session_end',
             <span class="download-platform-subtitle">Apple Silicon · arm64</span>
           </div>
           <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg" class="btn btn-primary download-btn">Download .dmg</a>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg" class="btn btn-primary download-btn" aria-label="Download Wrkmark for macOS">Download .dmg</a>
             <div class="download-card-note">Right-click &rarr; Open on first launch</div>
           </div>
         </div>
@@ -1401,7 +1443,7 @@ const APPROVED_TYPES = ['session_start', 'session_end',
             <span class="download-platform-subtitle">Windows · x64</span>
           </div>
           <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe" class="btn btn-primary download-btn">Download .exe</a>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe" class="btn btn-primary download-btn" aria-label="Download Wrkmark for Windows">Download .exe</a>
             <div class="download-card-note">Click 'More info' &rarr; 'Run anyway'</div>
           </div>
         </div>
@@ -1416,7 +1458,7 @@ const APPROVED_TYPES = ['session_start', 'session_end',
             <span class="download-platform-subtitle">Linux · x64 AppImage</span>
           </div>
           <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage" class="btn btn-primary download-btn">Download .AppImage</a>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage" class="btn btn-primary download-btn" aria-label="Download Wrkmark for Linux">Download .AppImage</a>
             <div class="download-card-note">chmod +x then run directly</div>
           </div>
         </div>
@@ -1602,11 +1644,13 @@ const APPROVED_TYPES = ['session_start', 'session_end',
       const navMobile = document.getElementById('navMobile');
       if (navToggle && navMobile) {
         navToggle.addEventListener('click', function() {
-          navMobile.classList.toggle('open');
+          const isOpen = navMobile.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
         navMobile.querySelectorAll('a').forEach(function(link) {
           link.addEventListener('click', function() {
             navMobile.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
           });
         });
       }
