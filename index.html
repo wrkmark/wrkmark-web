@@ -960,6 +960,14 @@
       opacity: 0.7;
     }
 
+    .install-note {
+      font-size: 0.72rem;
+      color: var(--text-2);
+      margin-top: 12px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
     @media (max-width: 900px) {
       .download-grid {
         grid-template-columns: 1fr;
@@ -1582,7 +1590,14 @@ const APPROVED_TYPES = ['session_start', 'session_end',
           <div>
             <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg"
               class="btn btn-primary download-btn" aria-label="Download Wrkmark for macOS">Download .dmg</a>
-            <div class="download-card-note">Right-click &rarr; Open on first launch</div>
+            <p class="install-note">
+              First time opening: macOS will say the app is
+              "unverified". This is normal for apps not yet
+              signed with Apple's paid certificate. Fix it in 2 seconds:
+              right-click Wrkmark in Applications &rarr; Open &rarr;
+              click "Open" in the dialog. You'll never see
+              this again after the first launch.
+            </p>
             <p style="font-size:0.65rem; color:var(--text-2);
                margin-top:6px; opacity:0.6;">
               Or run: <code style="font-family:'JetBrains Mono',
@@ -1612,7 +1627,12 @@ const APPROVED_TYPES = ['session_start', 'session_end',
           <div>
             <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe"
               class="btn btn-primary download-btn" aria-label="Download Wrkmark for Windows">Download .exe</a>
-            <div class="download-card-note">Click 'More info' &rarr; 'Run anyway'</div>
+            <p class="install-note">
+              Windows SmartScreen may flag this app as
+              unrecognized &mdash; same reason as Mac (code signing
+              certificate pending). Click "More info" then
+              "Run anyway". Safe to proceed.
+            </p>
           </div>
         </div>
 
