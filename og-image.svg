@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+    </pattern>
+    <!-- Drop Shadow Filter for Cards -->
+    <filter id="card-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f9fafb"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Left Side: Brand & Value Prop (60% width) -->
+  <g transform="translate(80, 110)">
+    <!-- Wordmark Logo -->
+    <g transform="translate(0, 0)">
+      <circle cx="10" cy="10" r="8" fill="#10b981"/>
+      <text x="32" y="19" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#111827" letter-spacing="-0.5px">Wrkmark Jobs</text>
+    </g>
+
+    <!-- Main Tagline -->
+    <text x="0" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="44" font-weight="700" fill="#111827" letter-spacing="-1.2px" line-height="1.2">
+      <tspan x="0" dy="0">The hiring platform where</tspan>
+      <tspan x="0" dy="56">candidates </tspan>
+      <tspan fill="#10b981">never apply.</tspan>
+    </text>
+
+    <!-- Subtitle explanation -->
+    <text x="0" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#4b5563" letter-spacing="-0.2px">
+      <tspan x="0" dy="0">Companies post roles. Our engine ranks the top 15</tspan>
+      <tspan x="0" dy="30">candidates. Direct outreach, zero resume spam.</tspan>
+    </text>
+
+    <!-- URL footer -->
+    <text x="0" y="380" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#6b7280" letter-spacing="-0.2px">
+      wrkmark.com
+    </text>
+  </g>
+
+  <!-- Right Side: Flow Illustration (40% width) -->
+  <g transform="translate(730, 80)">
+    <!-- Card 1 (Top): Company posting a job (rotated -2deg) -->
+    <g transform="translate(0, 30) rotate(-2 180 60)" filter="url(#card-shadow)">
+      <rect width="360" height="110" rx="12" fill="#ffffff" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Icon Container -->
+      <rect x="20" y="25" width="60" height="60" rx="8" fill="#f3f4f6"/>
+      <svg x="36" y="41" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+        <path d="M9 22v-4h6v4"/>
+        <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/>
+      </svg>
+      <!-- Texts -->
+      <text x="96" y="52" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#111827">Acme Systems</text>
+      <text x="96" y="74" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#059669">Senior Frontend Engineer</text>
+      <text x="96" y="92" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#6b7280">$140k - $160k · Remote</text>
+    </g>
+
+    <!-- Card 2 (Middle): Match Score Badge (rotated 0deg) -->
+    <g transform="translate(40, 160)" filter="url(#card-shadow)">
+      <rect width="320" height="100" rx="12" fill="#ffffff" stroke="rgba(16,185,129,0.25)" stroke-width="1.5"/>
+      <rect x="20" y="22" width="56" height="56" rx="28" fill="rgba(16,185,129,0.1)"/>
+      <text x="48" y="57" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#059669">94%</text>
+      
+      <text x="92" y="48" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#111827">Algorithmic Match</text>
+      <text x="92" y="70" font-family="Inter, sans-serif" font-size="13" font-weight="400" fill="#6b7280">Top 3 of 15 Ranked Candidates</text>
+    </g>
+
+    <!-- Card 3 (Bottom): Candidate Profile (rotated 2deg) -->
+    <g transform="translate(10, 280) rotate(2 180 60)" filter="url(#card-shadow)">
+      <rect width="360" height="120" rx="12" fill="#ffffff" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Avatar -->
+      <circle cx="50" cy="55" r="26" fill="#111827"/>
+      <text x="50" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff">AS</text>
+
+      <text x="92" y="46" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#111827">Alex S.</text>
+      <text x="92" y="66" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#6b7280">Staff Systems Architect</text>
+      
+      <!-- Skills Badges -->
+      <g transform="translate(92, 78)">
+        <rect x="0" y="0" width="60" height="22" rx="4" fill="rgba(16,185,129,0.1)"/>
+        <text x="30" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">React</text>
+
+        <rect x="68" y="0" width="80" height="22" rx="4" fill="rgba(16,185,129,0.1)"/>
+        <text x="108" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">TypeScript</text>
+
+        <rect x="156" y="0" width="60" height="22" rx="4" fill="rgba(16,185,129,0.1)"/>
+        <text x="186" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">Go</text>
+      </g>
+    </g>
+  </g>
+</svg>

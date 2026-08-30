@@ -6,36 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://wrkmark.com">
 
-  <title>Wrkmark — Prove how you work, not just what you make</title>
+  <title>Wrkmark Jobs — The hiring platform where candidates never apply</title>
   <meta name="description"
-    content="Wrkmark observes your work patterns and builds a verified behavioral profile. Open source. All data on your device.">
+    content="Companies post jobs. Our engine ranks the top 15 candidates. Companies reach out. Candidates choose to respond. No resume spam. No applications.">
 
   <!-- SEO Meta Tags -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="Akshay Sharma">
   <meta name="keywords"
-    content="behavioral verification, work tracking, skill verification, developer tools, professional profile, AI era, privacy-first">
+    content="hiring platform, tech recruitment, developer jobs, reverse hiring, no applications, algorithmic matching, ghost score, talent discovery">
   <meta name="theme-color" content="#10b981">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wrkmark.com">
-  <meta property="og:title" content="Wrkmark">
-  <meta property="og:description" content="Prove how you work, not just what you make.">
-  <meta property="og:site_name" content="Wrkmark">
-  <meta property="og:image" content="https://wrkmark.com/og-image.png">
+  <meta property="og:title" content="Wrkmark Jobs">
+  <meta property="og:description" content="The hiring platform where candidates never apply.">
+  <meta property="og:site_name" content="Wrkmark Jobs">
+  <meta property="og:image" content="https://wrkmark.com/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Wrkmark — Prove how you work">
+  <meta property="og:image:alt" content="Wrkmark Jobs — The hiring platform where candidates never apply">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wrkmark — Prove how you work">
-  <meta name="twitter:description"
-    content="Behavioral verification for the AI era. Open source. All data on your device.">
-  <meta name="twitter:image" content="https://wrkmark.com/og-image.png">
+  <meta name="twitter:title" content="Wrkmark Jobs">
+  <meta name="twitter:description" content="The hiring platform where candidates never apply.">
+  <meta name="twitter:image" content="https://wrkmark.com/og-image.svg">
 
-  <!-- Inline SVG Favicon (emerald circle with W) -->
+  <!-- Inline SVG Favicon -->
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2310b981'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='%230a0f0d' font-weight='bold'%3EW%3C/text%3E%3C/svg%3E">
 
@@ -45,20 +44,11 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="https://tally.so">
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <!-- Three.js CDN Setup -->
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
-    }
-  }
-  </script>
-
   <style>
-    /* Reset & Theme Tokens */
+    /* Reset & Theme Tokens (Design System) */
     *,
     *::before,
     *::after {
@@ -68,27 +58,27 @@
     }
 
     :root {
-      --bg: #0a0f0d;
-      --surface: #0f1a13;
-      --surface-2: #0d1510;
-      --border: rgba(16, 185, 129, 0.12);
-      --border-hover: rgba(16, 185, 129, 0.3);
-      --text: #e8f0eb;
-      --text-2: #6b8c76;
-      --emerald: #10b981;
-      --emerald-2: #34d399;
-      --emerald-dim: rgba(16, 185, 129, 0.08);
-      --rose: #f43f5e;
-
-      /* Type scale */
-      --type-hero: clamp(2.8rem, 5vw, 4.8rem);
-      --type-h2: clamp(1.6rem, 3vw, 2.4rem);
-      --type-body: 1rem;
-      --type-small: 0.875rem;
-      --type-mono: 0.8rem;
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --surface-2: #f3f4f6;
+      --surface-dark: #111827;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-subtle: rgba(0, 0, 0, 0.06);
+      --border-hover: rgba(16, 185, 129, 0.35);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --text: #111827;
+      --text-muted: #374151;
+      --text-2: #6b7280;
+      --text-light: #9ca3af;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --accent-dim: rgba(16, 185, 129, 0.08);
+      --accent-border: rgba(16, 185, 129, 0.2);
 
       --font-display: 'DM Serif Display', serif;
-      --font-body: 'Inter', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -104,10 +94,11 @@
 
     body {
       overflow-x: hidden;
-      line-height: 1.7;
+      line-height: 1.65;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
-    /* Common Components & Utilities */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -115,89 +106,87 @@
       width: 100%;
     }
 
-    .section {
-      padding: 120px 0;
-    }
-
-    @media (max-width: 768px) {
-      .section {
-        padding: 80px 0;
-      }
-    }
-
     .text-center {
       text-align: center;
     }
 
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--type-h2);
-      color: var(--text);
-      margin-bottom: 12px;
-      font-weight: normal;
-      line-height: 1.2;
-    }
-
-    .section-subtitle {
-      font-family: var(--font-body);
-      font-size: var(--type-body);
-      color: var(--text-2);
-      margin-bottom: 56px;
-    }
-
-    /* Primary and Secondary buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 500;
       text-decoration: none;
       padding: 14px 28px;
-      border-radius: 6px;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      border-radius: 8px;
+      transition: all 0.2s ease;
       cursor: pointer;
+      text-align: center;
     }
 
-    .btn-primary {
-      background-color: var(--emerald);
-      color: #0a0f0d;
-      border: 1px solid var(--emerald);
+    .btn-dark {
+      background-color: var(--surface-dark);
+      color: #ffffff;
+      border: 1px solid var(--surface-dark);
+      font-weight: 600;
     }
 
-    .btn-primary:hover {
-      background-color: #0d9668;
-      border-color: #0d9668;
+    .btn-dark:hover {
+      background-color: #1f2937;
+      border-color: #1f2937;
+      color: #ffffff;
+      text-decoration: none;
     }
 
-    .btn-secondary {
-      background-color: transparent;
+    .btn-outline {
+      background-color: #ffffff;
       color: var(--text);
-      border: 1px solid var(--border-hover);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: var(--shadow-sm);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--emerald);
-      color: var(--emerald);
+    .btn-outline:hover {
+      background-color: #f9fafb;
+      border-color: rgba(0, 0, 0, 0.25);
+      text-decoration: none;
     }
 
-    /* 1. Sticky Navigation */
+    .btn-emerald {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-emerald:hover {
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      border-radius: 6px;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* Sticky Navigation */
     .nav-header {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       width: 100%;
       height: 64px;
       z-index: 1000;
-      background-color: rgba(10, 15, 13, 0.8);
+      background-color: rgba(249, 250, 251, 0.95);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      transition: border-bottom 0.3s ease;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-header.scrolled {
       border-bottom: 1px solid var(--border);
     }
 
@@ -208,38 +197,27 @@
       height: 100%;
     }
 
-    .nav-logo {
+    .nav-logo-link {
       display: flex;
       align-items: center;
-      font-family: var(--font-body);
-      font-size: var(--type-body);
-      font-weight: 500;
-      color: var(--text);
       text-decoration: none;
-      letter-spacing: -0.02em;
     }
 
-    .nav-logo-dot {
-      color: var(--emerald);
-      font-size: 11px;
-      margin-right: 6px;
-    }
-
-    .nav-links {
+    .nav-right-group {
       display: flex;
-      gap: 24px;
       align-items: center;
+      gap: 20px;
     }
 
-    .nav-link {
-      font-family: var(--font-body);
-      font-size: var(--type-small);
+    .nav-observer-link {
+      font-size: 0.875rem;
+      font-weight: 400;
       color: var(--text-2);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
 
-    .nav-link:hover {
+    .nav-observer-link:hover {
       color: var(--text);
     }
 
@@ -268,29 +246,24 @@
       top: 64px;
       left: 0;
       width: 100%;
-      background: rgba(10, 15, 13, 0.97);
+      background: rgba(249, 250, 251, 0.98);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 16px 24px;
       flex-direction: column;
-      gap: 0;
+      gap: 12px;
+      box-shadow: var(--shadow-md);
     }
 
     .nav-mobile-menu a {
       display: block;
-      padding: 14px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
       color: var(--text);
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 0.95rem;
       text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .nav-mobile-menu a:hover {
-      color: var(--emerald);
     }
 
     .nav-mobile-menu a:last-child {
@@ -301,8 +274,8 @@
       display: flex;
     }
 
-    @media (max-width: 600px) {
-      .nav-links {
+    @media (max-width: 768px) {
+      .nav-right-group {
         display: none;
       }
 
@@ -311,1562 +284,836 @@
       }
     }
 
-    /* 2. Hero Section (60/40 Split) */
+    /* Hero Section */
     .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 64px;
-      position: relative;
+      padding: 96px 0 80px;
+      text-align: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 3.2fr 2.8fr;
-      align-items: center;
-      gap: 40px;
-      width: 100%;
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
     }
 
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      z-index: 10;
+    .eyebrow-pill {
+      display: inline-block;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-dark);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
     }
 
-    .hero-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--emerald);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
+    .hero-headline {
       font-family: var(--font-display);
-      font-size: var(--type-hero);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       color: var(--text);
       line-height: 1.1;
+      letter-spacing: -0.03em;
       font-weight: normal;
     }
 
-    .cursor {
-      color: var(--emerald);
-      display: inline-block;
-      margin-left: 2px;
-      animation: blink 1s step-end infinite;
+    .hero-headline .accent-line {
+      color: var(--accent);
+      display: inline;
     }
 
-    @keyframes blink {
-
-      from,
-      to {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .hero-body {
+    .hero-subheadline {
       font-family: var(--font-body);
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.125rem;
       color: var(--text-2);
-      max-width: 480px;
-      margin-top: 24px;
+      line-height: 1.65;
+      max-width: 560px;
+      margin: 20px auto 0 auto;
     }
 
-    .hero-ctas {
+    .hero-cta-row {
       display: flex;
-      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
       margin-top: 40px;
       flex-wrap: wrap;
     }
 
-    .hero-platforms-info {
+    .hero-trust-line {
       font-family: var(--font-body);
-      font-size: 0.85rem;
-      color: var(--text-2);
+      font-size: 0.8125rem;
+      color: var(--text-light);
       margin-top: 16px;
     }
 
-    .all-platforms-link {
-      color: var(--emerald);
-      text-decoration: none;
-      font-weight: 500;
-      margin-left: 6px;
-      transition: color 0.2s ease;
+    /* Section: How It Works */
+    .section-how-works {
+      padding: 80px 0;
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .all-platforms-link:hover {
-      color: var(--emerald-2);
+    .section-heading-serif {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--text);
+      line-height: 1.2;
+      font-weight: normal;
+      margin-bottom: 8px;
     }
 
-    .hero-trust {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
+    .section-subheading-inter {
+      font-family: var(--font-body);
+      font-size: 1rem;
       color: var(--text-2);
-      opacity: 0.7;
-      margin-top: 20px;
     }
 
-    /* Three.js canvas container */
-    .hero-canvas-container {
-      width: 100%;
-      height: 480px;
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .step-card {
       position: relative;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 28px 32px 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-watermark-number {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 3.5rem;
+      color: rgba(0, 0, 0, 0.05);
+      line-height: 1;
+      pointer-events: none;
       user-select: none;
     }
 
-    .hero-canvas-container canvas {
-      display: block;
-      width: 100%;
-      height: 100%;
-      outline: none;
-    }
-
-    /* CSS Radial Gradient fallback */
-    .hero-fallback-gradient {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(10, 15, 13, 0) 70%);
-      border-radius: 50%;
-      filter: blur(40px);
-      pointer-events: none;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-left {
-        align-items: center;
-      }
-
-      .hero-canvas-container {
-        display: none;
-        /* Hide canvas on mobile */
-      }
-    }
-
-    /* 3. Stats Bar */
-    .stats-bar {
-      background-color: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 48px 0;
-    }
-
-    .stats-grid {
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-    }
-
-    .stat-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 40px;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      color: var(--emerald);
-      line-height: 1.1;
-      margin-bottom: 8px;
-      font-weight: normal;
-    }
-
-    .stat-label {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      color: var(--text-2);
-      line-height: 1.5;
-      max-width: 200px;
-    }
-
-    .stat-divider {
-      width: 1px;
-      height: 80px;
-      background-color: var(--border);
-    }
-
-    .stats-source {
-      text-align: center;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--text-2);
-      opacity: 0.5;
-      margin-top: 24px;
-    }
-
-    @media (max-width: 900px) {
-      .stats-grid {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .stat-divider {
-        display: none;
-      }
-
-      .stat-item {
-        padding: 0;
-      }
-    }
-
-    /* 4. Live Signal Feed (Terminal Layout) */
-    .signal-feed-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .signal-left {
-      max-width: 440px;
-    }
-
-    .signal-body {
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      color: var(--text-2);
-      line-height: 1.7;
-      margin-top: 16px;
-    }
-
-    /* Styled code terminal */
-    .terminal-window {
-      background-color: #060d08;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 0 60px rgba(16, 185, 129, 0.06);
-      font-family: var(--font-mono);
-      padding: 24px;
-      min-height: 340px;
-      max-height: 380px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .terminal-header {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-      flex-shrink: 0;
-    }
-
-    .terminal-header .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .terminal-header .dot.red {
-      background-color: #ff5f57;
-    }
-
-    .terminal-header .dot.yellow {
-      background-color: #ffbd2e;
-    }
-
-    .terminal-header .dot.green {
-      background-color: #28ca41;
-    }
-
-    .terminal-content {
-      font-size: var(--type-mono);
-      line-height: 1.6;
-      overflow-y: auto;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      scrollbar-width: none;
-    }
-
-    .terminal-content::-webkit-scrollbar {
-      display: none;
-    }
-
-    .terminal-line {
-      white-space: pre-wrap;
-      word-break: break-all;
-      display: flex;
-      transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease;
-      opacity: 1;
-      height: auto;
-    }
-
-    .term-time {
-      color: var(--text-2);
-      opacity: 0.5;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-
-    .term-type {
-      margin-right: 12px;
-      display: inline-block;
-      min-width: 170px;
-      flex-shrink: 0;
-    }
-
-    .term-type.emerald {
-      color: var(--emerald);
-    }
-
-    .term-type.rose {
-      color: var(--rose);
-    }
-
-    .term-val {
-      color: var(--text);
-      display: inline-block;
-      min-width: 60px;
-      flex-shrink: 0;
-    }
-
-    .term-app {
-      color: var(--text-2);
-    }
-
-    .terminal-note-wrapper {
-      margin-top: 32px;
-      font-family: var(--font-body);
-      font-size: var(--type-small);
-      color: var(--text-2);
-    }
-
-    .terminal-note-wrapper a {
-      color: var(--emerald);
-      text-decoration: underline;
-      font-family: var(--font-mono);
-    }
-
-    .terminal-note-wrapper a:hover {
-      color: var(--emerald-2);
-    }
-
-    @media (max-width: 900px) {
-      .signal-feed-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .signal-left {
-        max-width: 100%;
-        text-align: center;
-      }
-    }
-
-    /* 5. How It Works (Grid) */
-    .section-how {
-      background-color: var(--surface-2);
-    }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 64px;
-    }
-
-    .how-card {
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px 32px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .how-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-    }
-
-    .how-icon {
-      font-family: var(--font-mono);
-      font-size: 2rem;
-      color: var(--emerald);
+      color: var(--accent);
       margin-bottom: 24px;
-      display: inline-block;
-      line-height: 1;
     }
 
-    .how-card-title {
+    .step-title {
       font-family: var(--font-body);
+      font-size: 1.0625rem;
       font-weight: 600;
-      font-size: 1.25rem;
       color: var(--text);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .how-card-body {
+    .step-body {
       font-family: var(--font-body);
-      font-size: var(--type-body);
+      font-size: 0.9375rem;
       color: var(--text-2);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     @media (max-width: 900px) {
-      .how-grid {
+      .steps-grid {
         grid-template-columns: 1fr;
         gap: 24px;
       }
     }
 
-    /* 6. Privacy Section */
-    .privacy-grid {
+    /* Section: Dual Value Prop */
+    .section-dual-prop {
+      padding: 80px 0;
+      background-color: var(--bg);
+    }
+
+    .dual-cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      max-width: 900px;
-      margin: 64px auto 0 auto;
-    }
-
-    .privacy-col {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .privacy-col-title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin-bottom: 24px;
-      font-weight: normal;
-    }
-
-    .privacy-col.observe .privacy-col-title {
-      color: var(--emerald);
-    }
-
-    .privacy-col.never-see .privacy-col-title {
-      color: var(--rose);
-    }
-
-    .privacy-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .privacy-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-family: var(--font-body);
-      font-size: var(--type-body);
-    }
-
-    .privacy-bullet {
-      font-weight: bold;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-
-    .privacy-col.observe .privacy-bullet {
-      color: var(--emerald);
-    }
-
-    .privacy-col.never-see .privacy-bullet {
-      color: var(--rose);
-    }
-
-    .privacy-text {
-      color: var(--text);
-    }
-
-    .privacy-note {
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px 32px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-2);
-      max-width: 900px;
-      margin: 48px auto 0 auto;
-    }
-
-    .privacy-note pre {
-      margin-bottom: 16px;
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-
-    .privacy-note-link {
-      font-family: var(--font-mono);
-      color: var(--text-2);
-    }
-
-    .privacy-note-link a {
-      color: var(--emerald);
-      text-decoration: underline;
-      margin-left: 4px;
-    }
-
-    .privacy-note-link a:hover {
-      color: var(--emerald-2);
-    }
-
-    @media (max-width: 768px) {
-      .privacy-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-
-    /* 7. Open Source Section */
-    .section-os {
-      background-color: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      padding: 80px 0;
-    }
-
-    .os-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--emerald);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-
-    .os-body {
-      font-family: var(--font-body);
-      color: var(--text-2);
-      max-width: 540px;
-      margin: 16px auto 0 auto;
-      line-height: 1.7;
-    }
-
-    .os-stats {
-      font-family: var(--font-mono);
-      font-size: var(--type-mono);
-      color: var(--emerald);
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .os-stats span {
-      color: var(--text-2);
-    }
-
-    .os-link {
-      color: var(--emerald);
-      text-decoration: none;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-
-    .os-link:hover {
-      text-decoration: underline;
-      color: var(--emerald-2);
-    }
-
-    /* 8. Download Section */
-    .download-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       max-width: 900px;
-      margin: 64px auto 0 auto;
+      margin: 0 auto;
     }
 
-    .download-card {
-      background-color: var(--surface);
+    .prop-card {
+      background-color: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 40px 32px;
-      text-align: center;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 360px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .download-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
+    .prop-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
     }
 
-    .download-card-top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .prop-tag.candidate {
+      color: var(--accent-dark);
     }
 
-    .download-icon {
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
+    .prop-tag.company {
       color: var(--text-2);
     }
 
-    .download-platform-title {
-      font-family: var(--font-body);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
+    .prop-illustration {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
     }
 
-    .download-platform-subtitle {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
+    .prop-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text);
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    .prop-subtitle {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .prop-subtitle.emerald {
+      color: var(--accent);
+    }
+
+    .prop-subtitle.dark {
+      color: var(--text);
+    }
+
+    .prop-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .prop-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .check-mark {
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .dual-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Section: Stats Bar (Dark Contrast) */
+    .section-stats-dark {
+      padding: 48px 0;
+      background-color: var(--surface-dark);
+    }
+
+    .stats-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-box {
+      flex: 1;
+      text-align: center;
+      padding: 0 32px;
+    }
+
+    .stat-number-serif {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1.1;
+      font-weight: normal;
+      margin-bottom: 6px;
+    }
+
+    .stat-number-serif.emerald {
+      color: var(--accent);
+    }
+
+    .stat-number-serif.white {
+      color: #ffffff;
+    }
+
+    .stat-label-light {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.4;
+    }
+
+    .stat-vertical-divider {
+      width: 1px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .stats-flex {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .stat-vertical-divider {
+        display: none;
+      }
+    }
+
+    /* Section: Trust */
+    .section-trust {
+      padding: 64px 0;
+      background-color: #ffffff;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 48px;
+    }
+
+    .trust-point {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .trust-icon {
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-title {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .trust-body {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    /* Section: Final CTA */
+    .section-final-cta {
+      padding: 80px 0;
+      background-color: var(--bg);
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .final-cta-heading {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-weight: normal;
+    }
+
+    .final-cta-sub {
+      font-family: var(--font-body);
+      font-size: 1rem;
       color: var(--text-2);
       margin-bottom: 32px;
     }
 
-    .download-btn {
-      width: 100%;
-      margin-bottom: 16px;
+    /* Footer */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
     }
 
-    .download-card-note {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--text-2);
-      opacity: 0.7;
+    .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
-    .install-note {
-      font-size: 0.72rem;
+    .footer-col-desc {
+      font-size: 0.875rem;
       color: var(--text-2);
       margin-top: 12px;
-      line-height: 1.6;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 900px) {
-      .download-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-
-    /* Collapsible Installation Guide */
-    .install-details {
-      margin-top: 48px;
-      background-color: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    .install-summary {
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: var(--emerald);
-      padding: 16px 24px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-
-    .install-summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .install-content {
-      padding: 8px 24px 24px 24px;
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 768px) {
-      .install-content {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-
-    .install-platform h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--text);
-      margin-bottom: 12px;
-      font-weight: normal;
-    }
-
-    .install-platform ol {
-      padding-left: 20px;
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      color: var(--text-2);
-    }
-
-    .install-platform li {
-      margin-bottom: 8px;
+      max-width: 320px;
       line-height: 1.5;
     }
 
-    /* 9. Waitlist Section */
-    .section-waitlist {
-      background-color: var(--surface-2);
+    .footer-heading {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .waitlist-body {
-      font-family: var(--font-body);
-      color: var(--text-2);
-      max-width: 480px;
-      margin: 12px auto 0 auto;
-    }
-
-    .tally-wrapper {
-      max-width: 480px;
-      margin: 40px auto 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      overflow: hidden;
-    }
-
-    .waitlist-note {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-2);
-      text-align: center;
-      margin-top: 16px;
-    }
-
-    /* 10. Footer Section */
-    .footer-border {
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px 24px;
-    }
-
-    .footer-left {
+    .footer-links-vertical {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 10px;
     }
 
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      font-family: var(--font-body);
-      font-size: var(--type-body);
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    .footer-logo-dot {
-      color: var(--emerald);
-      font-size: 11px;
-      margin-right: 6px;
-    }
-
-    .footer-left-desc {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--text-2);
-    }
-
-    .footer-center {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--text-2);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--text-2);
-    }
-
-    .footer-link {
+    .footer-links-vertical a {
       color: var(--text-2);
       text-decoration: none;
-      transition: color 0.2s ease;
+      font-size: 0.875rem;
+      transition: color 0.15s ease;
     }
 
-    .footer-link:hover {
+    .footer-links-vertical a:hover {
       color: var(--text);
+    }
+
+    .footer-bottom-row {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--text-2);
     }
 
     @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        gap: 24px;
-        text-align: center;
-      }
-
-      .footer-left {
-        align-items: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
-    }
-
-    /* Scroll animations: fade-in / slide-up elements */
-    .will-animate {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .will-animate.animated {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Staggers for siblings */
-    .how-card:nth-child(1) {
-      transition-delay: 0s;
-    }
-
-    .how-card:nth-child(2) {
-      transition-delay: 0.1s;
-    }
-
-    .how-card:nth-child(3) {
-      transition-delay: 0.2s;
-    }
-
-    .privacy-item:nth-child(1) {
-      transition-delay: 0s;
-    }
-
-    .privacy-item:nth-child(2) {
-      transition-delay: 0.05s;
-    }
-
-    .privacy-item:nth-child(3) {
-      transition-delay: 0.1s;
-    }
-
-    .privacy-item:nth-child(4) {
-      transition-delay: 0.15s;
-    }
-
-    .privacy-item:nth-child(5) {
-      transition-delay: 0.2s;
-    }
-
-    .privacy-item:nth-child(6) {
-      transition-delay: 0.25s;
-    }
-
-    .privacy-item:nth-child(7) {
-      transition-delay: 0.3s;
-    }
-
-    .download-card:nth-child(1) {
-      transition-delay: 0s;
-    }
-
-    .download-card:nth-child(2) {
-      transition-delay: 0.1s;
-    }
-
-    .download-card:nth-child(3) {
-      transition-delay: 0.2s;
-    }
-
-    .stat-item:nth-child(1) .stat-number {
-      transition-delay: 0s;
-    }
-
-    .stat-item:nth-child(3) .stat-number {
-      transition-delay: 0.1s;
-    }
-
-    .stat-item:nth-child(5) .stat-number {
-      transition-delay: 0.2s;
-    }
-
-    /* Respect prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      .will-animate {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
-    /* Floating Feedback Button */
-    .feedback-fab {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      background: var(--surface);
-      border: 1px solid var(--border-hover);
-      color: var(--emerald);
-      padding: 10px 18px;
-      border-radius: 100px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.82rem;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: all 0.2s;
-      z-index: 999;
-      backdrop-filter: blur(8px);
-    }
-
-    .feedback-fab:hover {
-      background: var(--emerald-dim);
-      border-color: var(--emerald);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 600px) {
-      .feedback-fab {
-        bottom: 20px;
-        right: 20px;
-        padding: 8px 14px;
-        font-size: 0.78rem;
+      .footer-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Wrkmark",
-    "description": "Behavioral verification desktop app for professionals in the AI era. Observes work patterns and builds a verified profile.",
-    "url": "https://wrkmark.com",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "macOS, Windows, Linux",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Akshay Sharma",
-      "url": "https://github.com/AxaySharma"
-    },
-    "sameAs": [
-      "https://github.com/wrkmark/wrkmark-observer",
-      "https://github.com/wrkmark/wrkmark-app"
-    ]
-  }
-  </script>
 
   <script defer src="https://cloud.umami.is/script.js" data-website-id="4c7cd50d-0b3a-4dc7-a996-ff2c0d6fa2c5"></script>
 </head>
 
 <body>
 
-  <!-- 1. NAVIGATION -->
+  <!-- Navigation Header -->
   <header class="nav-header">
     <div class="container nav-container">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-dot">●</span>Wrkmark
+      <!-- Reusable Wordmark Logo (small) -->
+      <a href="/" class="nav-logo-link" aria-label="Wrkmark Jobs Home">
+        <svg width="150" height="24" viewBox="0 0 150 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="12" r="5" fill="#10b981" />
+          <text x="22" y="16.5" font-family="Inter, -apple-system, sans-serif" font-size="16" font-weight="600"
+            fill="#111827" letter-spacing="-0.3px">Wrkmark Jobs</text>
+        </svg>
       </a>
-      <nav class="nav-links">
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="nav-link"
-          title="View open source observer engine on GitHub">Open source</a>
-        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank" class="nav-link">GitHub</a>
-        <a href="#download" class="nav-link">Download</a>
-      </nav>
+
+      <div class="nav-right-group">
+        <a href="/app.html" class="nav-observer-link">Wrkmark Observer</a>
+        <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline btn-sm">Find Work</a>
+        <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-emerald btn-sm">Post a Job</a>
+      </div>
+
       <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
       <div class="nav-mobile-menu" id="navMobile">
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank"
-          title="View open source observer engine on GitHub">Open source</a>
-        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank">GitHub</a>
-        <a href="#download">Download</a>
-        <a href="#waitlist">Join waitlist</a>
+        <a href="/app.html">Wrkmark Observer</a>
+        <a href="https://jobs.wrkmark.com/login?type=candidate">Find Work (Candidate)</a>
+        <a href="https://jobs.wrkmark.com/login?type=company" style="color:var(--accent-dark); font-weight:600;">Post a
+          Job ($99)</a>
       </div>
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <span class="hero-eyebrow">Behavioral verification · v0.1.0 BETA</span>
-          <h1 class="hero-title">
-            Prove how you work,<br>not just what<br>you make.<span class="cursor">|</span>
-          </h1>
-          <p class="hero-body">
-            Wrkmark observes your work patterns and builds a verified behavioral profile. Typing rhythm. Focus depth.
-            Revision patterns. The signals that can't be faked.
-          </p>
-          <div class="hero-ctas">
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg"
-              class="btn btn-primary" id="hero-download-btn">Download for Mac ↓</a>
-            <a href="#waitlist" class="btn btn-secondary">Join waitlist</a>
-          </div>
-          <p class="hero-platforms-info">
-            Available for macOS, Windows, &amp; Linux. <a href="#download" class="all-platforms-link">See all platforms →</a>
-          </p>
-          <p class="hero-trust">
-            Open source · Privacy-first · All data on your device
-          </p>
+      <div class="hero-content">
+        <div class="eyebrow-pill">
+          No applications. No resume spam. No ghosting.
         </div>
-        <div class="hero-canvas-container" id="three-canvas-container" role="img"
-          aria-label="Interactive 3D particle visualization showing behavioral signals forming a profile">
-          <!-- Fallback Radial Gradient if WebGL disabled -->
-          <div class="hero-fallback-gradient"></div>
+        <h1 class="hero-headline">
+          The hiring platform<br>where candidates<br><span class="accent-line">never apply.</span>
+        </h1>
+        <p class="hero-subheadline">
+          Companies post roles. Our engine ranks the top 15 candidates by skills, salary, timezone, and experience.
+          Companies reach out. Candidates choose to respond.
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job — $99</a>
+          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline">Join as Candidate (Free)</a>
+        </div>
+        <div class="hero-trust-line">
+          Free for candidates &middot; $99 per job post &middot; Top 15 matched candidates guaranteed
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. STATS BAR -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">67%</div>
-          <div class="stat-label">of hiring managers can't verify real skills</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">41%</div>
-          <div class="stat-label">abandoned resume-first hiring entirely</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">0</div>
-          <div class="stat-label">bytes of your content ever leave your device</div>
-        </div>
-      </div>
-      <div class="stats-source">Source: Robert Half, 2026</div>
-    </div>
-  </section>
-
-  <!-- 4. LIVE SIGNAL FEED -->
-  <section class="section">
-    <div class="container">
-      <div class="signal-feed-grid">
-        <div class="signal-left">
-          <h2 class="section-title">What gets observed</h2>
-          <p class="signal-body">
-            Every signal Wrkmark captures. Nothing more is technically possible — the anonymizer rejects anything
-            outside these 8 types.
-          </p>
-          <div class="terminal-note-wrapper">
-            These are the ONLY signal types the observer accepts. Read the source:
-            <a href="https://github.com/wrkmark/wrkmark-observer/blob/main/src/processor/anonymizer.ts"
-              target="_blank">anonymizer.ts &rarr;</a>
-          </div>
-        </div>
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="terminal-content" aria-live="polite" aria-label="Live signal feed">
-            <!-- Appended lines stream here -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. HOW IT WORKS -->
-  <section class="section section-how">
+  <!-- How It Works Section -->
+  <section class="section-how-works" id="how-it-works">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-subtitle">Installed in 2 minutes. No configuration required.</p>
+        <h2 class="section-heading-serif">How Wrkmark Jobs works</h2>
+        <p class="section-subheading-inter">Three steps. No applications. No resume spam.</p>
       </div>
-      <div class="how-grid">
-        <div class="how-card">
-          <span class="how-icon">◉</span>
-          <h3 class="how-card-title">Wrkmark watches</h3>
-          <p class="how-card-body">
-            Opens quietly in your menu bar. Detects which work app is in the foreground. Sessions start and stop
-            automatically — no manual tracking, no check-ins.
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-watermark-number">01</div>
+          <div class="step-icon">
+            <!-- Icon 1: Building (company) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <path d="M9 22v-4h6v4"></path>
+              <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"></path>
+            </svg>
+          </div>
+          <h3 class="step-title">Companies post roles</h3>
+          <p class="step-body">
+            Describe the role with exact salary, skills required, and working hours. $99 per post. Goes live instantly.
           </p>
         </div>
-        <div class="how-card">
-          <span class="how-icon">◈</span>
-          <h3 class="how-card-title">Patterns emerge</h3>
-          <p class="how-card-body">
-            Typing rhythm, session length, focus depth, AI tool usage. Not what you typed — the timing between
-            keystrokes. The behavioral fingerprint of how you actually work.
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-watermark-number">02</div>
+          <div class="step-icon">
+            <!-- Icon 2: Network / nodes (matching) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+          </div>
+          <h3 class="step-title">Engine ranks candidates</h3>
+          <p class="step-body">
+            Our algorithm scores every active candidate profile against your role &mdash; skills, salary compatibility,
+            timezone, experience. Top 15 shown to you, ranked.
           </p>
         </div>
-        <div class="how-card">
-          <span class="how-icon">↗</span>
-          <h3 class="how-card-title">Share your profile</h3>
-          <p class="how-card-body">
-            A verified profile at wrkmark.com/p/your-name. Share with anyone. Shows verified hours and behavioral
-            indicators — never your code or content.
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-watermark-number">03</div>
+          <div class="step-icon">
+            <!-- Icon 3: Message bubble (contact) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="step-title">You reach out. They decide.</h3>
+          <p class="step-body">
+            Contact candidates directly through the platform. Candidates choose whether to respond. No ghosting &mdash;
+            we track it.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. PRIVACY -->
-  <section class="section" id="privacy">
+  <!-- Dual Value Prop Section -->
+  <section class="section-dual-prop" id="pricing">
     <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Privacy by architecture</h2>
-        <p class="section-subtitle">Constraints enforced in code. Not policy.</p>
-      </div>
-      <div class="privacy-grid">
-        <div class="privacy-col observe">
-          <h3 class="privacy-col-title">We observe</h3>
-          <ul class="privacy-list">
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">Time in work apps</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">Typing rhythm (intervals — not keys)</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">Session start and end</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">Pause and resume patterns</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">File switch count (not filenames)</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">Build run count (not commands)</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✓</span>
-              <span class="privacy-text">AI-native tool usage (app name only)</span>
-            </li>
-          </ul>
-        </div>
-        <div class="privacy-col never-see">
-          <h3 class="privacy-col-title">We never see</h3>
-          <ul class="privacy-list">
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">What you type</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">File contents or names</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">URLs you visit</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">Passwords or clipboard</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">Screen content</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">Audio or video</span>
-            </li>
-            <li class="privacy-item">
-              <span class="privacy-bullet">✗</span>
-              <span class="privacy-text">Anything outside 8 signal types</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="privacy-note">
-        <pre><code>// anonymizer.ts rejects any signal not in this set:
-const APPROVED_TYPES = ['session_start', 'session_end',
-'typing_rhythm_bucket', 'pause_event', 'undo_event',
-'file_switch', 'ai_tool_opened', 'build_run']</code></pre>
-        <div class="privacy-note-link">
-          Read the implementation &rarr; <a
-            href="https://github.com/wrkmark/wrkmark-observer/blob/main/src/processor/anonymizer.ts"
-            target="_blank">anonymizer.ts on GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. OPEN SOURCE -->
-  <section class="section-os">
-    <div class="container">
-      <span class="os-eyebrow">OPEN SOURCE · MIT LICENSE</span>
-      <h2 class="section-title">Read it before you trust it.</h2>
-      <p class="os-body">
-        The observation engine — every signal type, every privacy check, every audit entry — is open source. 69 tests
-        passing. Verified by anyone.
-      </p>
-      <div class="os-stats">
-        69 tests passing &middot; MIT license &middot; v0.1.2
-      </div>
-      <div>
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="os-link">View wrkmark-observer on
-          GitHub &rarr;</a>
-      </div>
-      <div style="margin-top: 16px">
-        <a href="https://github.com/wrkmark/wrkmark-observer/discussions" target="_blank"
-          style="color: var(--text-2); font-family: 'Inter', sans-serif; font-size: 0.875rem; text-decoration: none; border-bottom: 1px solid var(--border);">
-          Join the discussion →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. DOWNLOAD -->
-  <section class="section" id="download">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Download Wrkmark</h2>
-        <p class="section-subtitle">v0.1.0 beta · Free · Open source</p>
-      </div>
-      <div class="download-grid">
-        <!-- macOS -->
-        <div class="download-card">
-          <div class="download-card-top">
-            <div class="download-icon">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                <path
-                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+      <div class="dual-cards-grid">
+        <!-- Candidates Card -->
+        <div class="prop-card">
+          <div>
+            <div class="prop-tag candidate">FOR CANDIDATES</div>
+            <!-- Illustration 80x80 -->
+            <div class="prop-illustration">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.15)" />
+                <!-- Candidate avatar & badges -->
+                <circle cx="40" cy="32" r="12" fill="#10b981" />
+                <path d="M22 58c0-8.837 8.059-16 18-16s18 7.163 18 16" stroke="#10b981" stroke-width="2.5"
+                  stroke-linecap="round" />
+                <!-- Floating skill badges -->
+                <rect x="8" y="18" width="22" height="12" rx="3" fill="#10b981" opacity="0.85" />
+                <rect x="52" y="16" width="20" height="12" rx="3" fill="#10b981" opacity="0.85" />
+                <rect x="54" y="46" width="18" height="12" rx="3" fill="#10b981" opacity="0.85" />
               </svg>
             </div>
-            <h3 class="download-platform-title">macOS</h3>
-            <span class="download-platform-subtitle">Apple Silicon · arm64</span>
+            <h3 class="prop-title">Build your profile once.</h3>
+            <div class="prop-subtitle emerald">Get discovered.</div>
+
+            <ul class="prop-features-list">
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Free forever &mdash; no hidden costs</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Companies come to you &mdash; no applying</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>One profile matches all opportunities</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Control who contacts you</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Your data never sold</span>
+              </li>
+            </ul>
           </div>
-          <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg"
-              class="btn btn-primary download-btn" aria-label="Download Wrkmark for macOS">Download .dmg</a>
-            <p class="install-note">
-              First time opening: macOS will say the app is
-              "unverified". This is normal for apps not yet
-              signed with Apple's paid certificate. Fix it in 2 seconds:
-              right-click Wrkmark in Applications &rarr; Open &rarr;
-              click "Open" in the dialog. You'll never see
-              this again after the first launch.
-            </p>
-            <p style="font-size:0.65rem; color:var(--text-2);
-               margin-top:6px; opacity:0.6;">
-              Or run: <code style="font-family:'JetBrains Mono',
-              monospace; background:rgba(16,185,129,0.08);
-              padding:1px 4px; border-radius:3px;">
-              curl -s https://wrkmark.com/install-mac.sh | bash
-              </code> after installing
-            </p>
-          </div>
+
+          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-emerald btn-block">Create Free Profile
+            &rarr;</a>
         </div>
 
-        <!-- Windows -->
-        <div class="download-card">
-          <div class="download-card-top">
-            <div class="download-icon">
-              <!-- Windows SVG -->
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                <rect x="3" y="3" width="8.5" height="8.5" />
-                <rect x="12.5" y="3" width="8.5" height="8.5" />
-                <rect x="3" y="12.5" width="8.5" height="8.5" />
-                <rect x="12.5" y="12.5" width="8.5" height="8.5" />
+        <!-- Companies Card -->
+        <div class="prop-card">
+          <div>
+            <div class="prop-tag company">FOR COMPANIES</div>
+            <!-- Illustration 80x80 -->
+            <div class="prop-illustration">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" fill="#f3f4f6" stroke="rgba(0,0,0,0.08)" />
+                <!-- Ranked rows with score badges -->
+                <rect x="18" y="20" width="44" height="10" rx="3" fill="#111827" />
+                <circle cx="56" cy="25" r="3" fill="#10b981" />
+
+                <rect x="18" y="36" width="44" height="10" rx="3" fill="#111827" opacity="0.8" />
+                <circle cx="56" cy="41" r="3" fill="#10b981" />
+
+                <rect x="18" y="52" width="44" height="10" rx="3" fill="#111827" opacity="0.6" />
+                <circle cx="56" cy="57" r="3" fill="#10b981" />
               </svg>
             </div>
-            <h3 class="download-platform-title">Windows</h3>
-            <span class="download-platform-subtitle">Windows · x64</span>
-          </div>
-          <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe"
-              class="btn btn-primary download-btn" aria-label="Download Wrkmark for Windows">Download .exe</a>
-            <p class="install-note">
-              Windows SmartScreen may flag this app as
-              unrecognized &mdash; same reason as Mac (code signing
-              certificate pending). Click "More info" then
-              "Run anyway". Safe to proceed.
-            </p>
-          </div>
-        </div>
+            <h3 class="prop-title">Post once.</h3>
+            <div class="prop-subtitle dark">Get your shortlist.</div>
 
-        <!-- Linux -->
-        <div class="download-card">
-          <div class="download-card-top">
-            <div class="download-icon" style="font-size: 2.2rem; font-family: var(--font-body); line-height: 1;">
-              ◈
-            </div>
-            <h3 class="download-platform-title">Linux</h3>
-            <span class="download-platform-subtitle">Linux · x64 AppImage</span>
+            <ul class="prop-features-list">
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Top 15 pre-ranked candidates</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Skills, salary, timezone matched</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>No resume screening required</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Direct messaging on-platform</span>
+              </li>
+              <li class="prop-feature-item">
+                <span class="check-mark">✓</span>
+                <span>Ghost Score accountability</span>
+              </li>
+            </ul>
           </div>
-          <div>
-            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage"
-              class="btn btn-primary download-btn" aria-label="Download Wrkmark for Linux">Download
-              .AppImage</a>
-            <div class="download-card-note">chmod +x then run directly</div>
-          </div>
+
+          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark btn-block">Post a Job — $99
+            &rarr;</a>
         </div>
       </div>
-
-      <!-- Collapsible Installation Guide -->
-      <details class="install-details">
-        <summary class="install-summary">
-          <span>Installation guide</span>
-          <span>↓</span>
-        </summary>
-        <div class="install-content">
-          <div class="install-platform">
-            <h4>macOS</h4>
-            <ol>
-              <li>Download the <code>.dmg</code> file from the link above.</li>
-              <li>Double-click the downloaded file to mount the disk image.</li>
-              <li>Drag the Wrkmark app icon into your <code>Applications</code> folder.</li>
-              <li>Right-click the app in your Applications folder and select <strong>Open</strong> to start the
-                application.</li>
-            </ol>
-          </div>
-          <div class="install-platform">
-            <h4>Windows</h4>
-            <ol>
-              <li>Download the <code>.exe</code> setup installer.</li>
-              <li>Double-click the installer file to launch the wizard.</li>
-              <li>If Microsoft Defender SmartScreen warns you, click <strong>More info</strong> and select <strong>Run
-                  anyway</strong>.</li>
-              <li>Follow the steps to complete installation.</li>
-            </ol>
-          </div>
-          <div class="install-platform">
-            <h4>Linux</h4>
-            <ol>
-              <li>Download the <code>.AppImage</code> file.</li>
-              <li>Open your terminal to make the file executable: <code>chmod +x Wrkmark-0.1.0.AppImage</code>.</li>
-              <li>Run the AppImage file directly in your shell or file manager.</li>
-            </ol>
-          </div>
-        </div>
-      </details>
     </div>
   </section>
 
-  <!-- 9. WAITLIST -->
-  <section class="section section-waitlist" id="waitlist">
-    <div class="container text-center">
-      <h2 class="section-title">Not ready to install?</h2>
-      <p class="waitlist-body">
-        Join the waitlist. We'll let you know when the next version ships. No spam, ever.
-      </p>
-      <div class="tally-wrapper">
-        <iframe
-          data-tally-src="https://tally.so/embed/RGr67v?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy" width="100%" height="120" frameborder="0" marginheight="0" marginwidth="0"
-          title="Join Wrkmark waitlist"></iframe>
+  <!-- Stats Bar (Dark Section) -->
+  <section class="section-stats-dark">
+    <div class="container">
+      <div class="stats-flex">
+        <div class="stat-box">
+          <div class="stat-number-serif emerald">$99</div>
+          <div class="stat-label-light">per job post &mdash; one time</div>
+        </div>
+        <div class="stat-vertical-divider"></div>
+        <div class="stat-box">
+          <div class="stat-number-serif white">15</div>
+          <div class="stat-label-light">pre-ranked candidates shown</div>
+        </div>
+        <div class="stat-vertical-divider"></div>
+        <div class="stat-box">
+          <div class="stat-number-serif white">0</div>
+          <div class="stat-label-light">resumes to manually review</div>
+        </div>
       </div>
-      <p class="waitlist-note">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 
-  <!-- 10. FOOTER -->
-  <footer class="footer-border">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <a href="#" class="footer-logo">
-          <span class="footer-logo-dot">●</span>Wrkmark
-        </a>
-        <span class="footer-left-desc">Proof of work for the AI age.</span>
+  <!-- Trust Section -->
+  <section class="section-trust">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading-serif">Built on trust. Designed for fairness.</h2>
+        <p class="section-subheading-inter">A transparent hiring infrastructure where incentives align.</p>
       </div>
-      <div class="footer-center">
-        Built in Vadodara, India 🇮🇳
+
+      <div class="trust-grid">
+        <!-- Trust Point 1: Privacy Shield -->
+        <div class="trust-point">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <h3 class="trust-title">Privacy by design</h3>
+          <p class="trust-body">
+            Candidate contact info is never shared. Companies can only reach you through our platform.
+          </p>
+        </div>
+
+        <!-- Trust Point 2: Code / Open Source -->
+        <div class="trust-point">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="trust-title">Transparent matching</h3>
+          <p class="trust-body">
+            See exactly why you matched. Every score is explained. No black box algorithms.
+          </p>
+        </div>
+
+        <!-- Trust Point 3: Ghost -->
+        <div class="trust-point">
+          <div class="trust-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 10h.01"></path>
+              <path d="M15 10h.01"></path>
+              <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"></path>
+            </svg>
+          </div>
+          <h3 class="trust-title">Ghost Score accountability</h3>
+          <p class="trust-body">
+            Companies are tracked on whether they follow up. Bad actors lose access.
+          </p>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="footer-link">Observer Engine</a>
-        &middot;
-        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank" class="footer-link">App Source</a>
-        &middot;
-        <a href="/privacy.html" class="footer-link">Privacy</a>
-        &middot;
-        <a href="/terms.html" class="footer-link">Terms</a>
-        &middot;
-        <a href="/refund.html" class="footer-link">Refund</a>
-        &middot;
-        <a href="https://github.com/wrkmark/wrkmark-observer/discussions" target="_blank"
-          class="footer-link">Discussions</a>
-        &middot;
-        <a href="https://tally.so/r/WOQPkP" target="_blank" class="footer-link">Feedback</a>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="section-final-cta">
+    <div class="container">
+      <h2 class="final-cta-heading">Ready to hire differently?</h2>
+      <p class="final-cta-sub">Join the hiring platform that respects everyone's time.</p>
+      <div class="hero-cta-row">
+        <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job — $99</a>
+        <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline">Join as Candidate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand & Mission -->
+        <div>
+          <a href="/" class="nav-logo-link" aria-label="Wrkmark Jobs Home">
+            <svg width="150" height="24" viewBox="0 0 150 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="12" r="5" fill="#10b981" />
+              <text x="22" y="16.5" font-family="Inter, -apple-system, sans-serif" font-size="16" font-weight="600"
+                fill="#111827" letter-spacing="-0.3px">Wrkmark Jobs</text>
+            </svg>
+          </a>
+          <p class="footer-col-desc">
+            The hiring platform where candidates never apply.
+          </p>
+        </div>
+
+        <!-- Col 2: Platform -->
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links-vertical">
+            <li><a href="https://jobs.wrkmark.com">Jobs board</a></li>
+            <li><a href="https://jobs.wrkmark.com/login?type=company">Post a job</a></li>
+            <li><a href="https://jobs.wrkmark.com/login?type=candidate">For candidates</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Legal & More -->
+        <div>
+          <h4 class="footer-heading">Legal &amp; More</h4>
+          <ul class="footer-links-vertical">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/refund.html">Refund Policy</a></li>
+            <li><a href="/app.html">Wrkmark Observer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        &copy; 2026 Wrkmark Jobs &middot; Built in India 🇮🇳
       </div>
     </div>
   </footer>
 
-  <!-- Javascript Logic -->
+  <!-- Mobile Navigation Logic -->
   <script>
-    // 1. WebGL Support Checker
-    function hasWebGL() {
-      try {
-        const canvas = document.createElement('canvas');
-        return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-      } catch (e) {
-        return false;
-      }
-    }
-
-    // 2. Terminal Log Streaming
-    const signals = [
-      { type: 'session_start', value: null, app: 'Visual Studio Code' },
-      { type: 'typing_rhythm_bucket', value: 3, app: 'VS Code' },
-      { type: 'typing_rhythm_bucket', value: 7, app: 'VS Code' },
-      { type: 'pause_event', value: 47, app: 'VS Code' },
-      { type: 'file_switch', value: 1, app: 'VS Code' },
-      { type: 'typing_rhythm_bucket', value: 2, app: 'Cursor' },
-      { type: 'ai_tool_opened', value: 1, app: 'Antigravity IDE' },
-      { type: 'undo_event', value: 1, app: 'VS Code' },
-      { type: 'build_run', value: 1, app: 'VS Code' },
-      { type: 'pause_event', value: 183, app: 'VS Code' },
-      { type: 'typing_rhythm_bucket', value: 12, app: 'Cursor' },
-      { type: 'session_end', value: null, app: 'Visual Studio Code' },
-    ];
-
-    function getFormattedTime() {
-      const now = new Date();
-      return now.toTimeString().split(' ')[0];
-    }
-
-    function appendLogLine() {
-      const terminalBody = document.querySelector('.terminal-content');
-      if (!terminalBody) return;
-
-      const signal = signals[Math.floor(Math.random() * signals.length)];
-
-      const line = document.createElement('div');
-      line.className = 'terminal-line';
-
-      const timeSpan = document.createElement('span');
-      timeSpan.className = 'term-time';
-      timeSpan.textContent = `[${getFormattedTime()}]`;
-
-      const typeSpan = document.createElement('span');
-      typeSpan.className = `term-type ${signal.type === 'session_end' ? 'rose' : 'emerald'}`;
-      typeSpan.textContent = signal.type.padEnd(22, ' ');
-
-      const valSpan = document.createElement('span');
-      valSpan.className = 'term-val';
-      valSpan.textContent = signal.value === null ? 'null'.padEnd(8, ' ') : String(signal.value).padEnd(8, ' ');
-
-      const appSpan = document.createElement('span');
-      appSpan.className = 'term-app';
-      appSpan.textContent = signal.app;
-
-      line.appendChild(timeSpan);
-      line.appendChild(typeSpan);
-      line.appendChild(valSpan);
-      line.appendChild(appSpan);
-
-      terminalBody.appendChild(line);
-
-      // Handle lines count
-      const lines = terminalBody.querySelectorAll('.terminal-line');
-      if (lines.length > 12) {
-        for (let i = 0; i < lines.length - 12; i++) {
-          lines[i].style.opacity = '0';
-          lines[i].style.height = '0';
-          lines[i].style.margin = '0';
-          setTimeout(() => {
-            lines[i].remove();
-          }, 500);
-        }
-      }
-
-      // Auto scroll
-      terminalBody.scrollTo({
-        top: terminalBody.scrollHeight,
-        behavior: 'smooth'
-      });
-    }
-
-    // Initialize terminal log feed
     document.addEventListener("DOMContentLoaded", () => {
-      // Dynamic OS Detection and CTA update
-      const heroDownloadBtn = document.getElementById('hero-download-btn');
-      if (heroDownloadBtn) {
-        const userAgent = window.navigator.userAgent.toLowerCase();
-        let downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg';
-        let btnText = 'Download for Mac ↓';
-
-        if (userAgent.indexOf('win') !== -1) {
-          downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe';
-          btnText = 'Download for Windows ↓';
-        } else if (userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
-          downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage';
-          btnText = 'Download for Linux ↓';
-        } else if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
-          downloadUrl = '#download';
-          btnText = 'Download Beta ↓';
-        }
-
-        heroDownloadBtn.href = downloadUrl;
-        heroDownloadBtn.textContent = btnText;
-
-        if (downloadUrl.startsWith('#')) {
-          heroDownloadBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(downloadUrl);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth' });
-            }
-          });
-        }
-      }
-
-      // Print first line immediately
-      appendLogLine();
-      // Repeat every 1.8s
-      setInterval(appendLogLine, 1.8 * 1000);
-
-      // Mobile Navigation Toggle
       const navToggle = document.getElementById('navToggle');
       const navMobile = document.getElementById('navMobile');
       if (navToggle && navMobile) {
@@ -1881,265 +1128,8 @@ const APPROVED_TYPES = ['session_start', 'session_end',
           });
         });
       }
-
-      // 3. Sticky Navigation Scroll Effect
-      const header = document.querySelector('.nav-header');
-      const handleScroll = () => {
-        if (window.scrollY > 20) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      };
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
-
-      // 4. IntersectionObserver for Reveal Animations
-      const animateTargets = [
-        ...document.querySelectorAll('.stat-number'),
-        ...document.querySelectorAll('.how-card'),
-        ...document.querySelectorAll('.privacy-item'),
-        ...document.querySelectorAll('.download-card'),
-        ...document.querySelectorAll('h2:not(.hero-title)')
-      ];
-
-      animateTargets.forEach(el => {
-        el.classList.add('will-animate');
-      });
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.15
-      });
-
-      animateTargets.forEach(el => {
-        observer.observe(el);
-      });
     });
   </script>
-
-  <!-- 3D Particle system script -->
-  <script type="module">
-    import * as THREE from 'three';
-
-    function hasWebGL() {
-      try {
-        const canvas = document.createElement('canvas');
-        return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-      } catch (e) {
-        return false;
-      }
-    }
-
-    const container = document.getElementById('three-canvas-container');
-    if (container && hasWebGL()) {
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-
-      const scene = new THREE.Scene();
-
-      // Camera
-      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-      camera.position.z = 6.0;
-
-      // Renderer
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setClearColor(0x000000, 0); // Explicitly set background transparent
-      container.appendChild(renderer.domElement);
-
-      // Create materials
-      const emeraldMat = new THREE.MeshBasicMaterial({
-        color: 0x10b981,
-        transparent: true,
-        opacity: 0.6
-      });
-
-      const whiteMat = new THREE.MeshBasicMaterial({
-        color: 0xe8f0eb,
-        transparent: true,
-        opacity: 0.3
-      });
-
-      const sphereGeom = new THREE.SphereGeometry(0.08, 5, 5); // 0.08 radius
-      const group = new THREE.Group();
-      scene.add(group);
-
-      const particleCount = 800;
-      const particles = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        // STATE A: Cloud
-        const r = Math.random() * 2.2 + 0.3;
-        const theta = Math.random() * Math.PI * 2;
-        const phi = Math.acos(Math.random() * 2 - 1);
-
-        const ax = r * Math.sin(phi) * Math.cos(theta);
-        const ay = r * Math.sin(phi) * Math.sin(theta);
-        const az = r * Math.cos(phi);
-
-        // Drift params
-        const driftSpeed = 0.4 + Math.random() * 0.8;
-        const driftAmp = 0.12 + Math.random() * 0.12;
-        const offset = Math.random() * Math.PI * 2;
-
-        // STATE B: Card
-        let bx, by, bz;
-        bz = (Math.random() - 0.5) * 0.05;
-
-        if (i < 150) {
-          // Border outline (rounded rect w=3.4, h=2.4)
-          const t = (i / 150) * Math.PI * 2;
-          const cosT = Math.cos(t);
-          const sinT = Math.sin(t);
-          const w_half = 1.7;
-          const h_half = 1.2;
-          const radius = 0.25;
-          bx = Math.sign(cosT) * (w_half - radius) + cosT * radius;
-          by = Math.sign(sinT) * (h_half - radius) + sinT * radius;
-        } else if (i < 320) {
-          // Avatar circle on the left: center=(-0.85, 0.1), radius=0.4
-          const t = ((i - 150) / 170) * Math.PI * 2;
-          const r_val = Math.random() * 0.4;
-          bx = -0.85 + Math.cos(t) * r_val;
-          by = 0.1 + Math.sin(t) * r_val;
-        } else if (i < 550) {
-          // Card body scattered
-          const w_half = 1.6;
-          const h_half = 1.1;
-          bx = (Math.random() - 0.5) * w_half * 2;
-          by = (Math.random() - 0.5) * h_half * 2;
-        } else {
-          // Text lines on the right side
-          const lineIndex = (i - 550) % 3;
-          const xStart = -0.25;
-          const xEnd = lineIndex === 2 ? 0.6 : 1.3;
-          const t = Math.random();
-          bx = xStart + t * (xEnd - xStart);
-          by = 0.4 - lineIndex * 0.4 + (Math.random() - 0.5) * 0.03;
-        }
-
-        // Random sizes (0.04 to 0.12)
-        const size = 0.04 + Math.random() * 0.08;
-        const scale = size / 0.08;
-
-        // Colors & opacity: 60% emerald (#10b981), 40% white (#e8f0eb)
-        const isEmerald = Math.random() < 0.6;
-        const mat = isEmerald ? emeraldMat : whiteMat;
-
-        const mesh = new THREE.Mesh(sphereGeom, mat);
-        mesh.scale.set(scale, scale, scale);
-        group.add(mesh);
-
-        particles.push({
-          mesh,
-          base_ax: ax, base_ay: ay, base_az: az,
-          driftSpeed, driftAmp, offset,
-          bx, by, bz
-        });
-      }
-
-      // Lights
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-      scene.add(ambientLight);
-
-      const pointLight = new THREE.PointLight(0x10b981, 2.0, 100);
-      pointLight.position.set(2, 2, 2);
-      scene.add(pointLight);
-
-      // Transition triggers
-      let lerpVal = 0.0;
-      let targetLerpVal = 0.0;
-
-      const heroSection = document.querySelector('.hero-section');
-
-      // Global mousemove check to bypass headless browser event bugs
-      document.addEventListener('mousemove', (e) => {
-        if (!heroSection) return;
-        const rect = heroSection.getBoundingClientRect();
-        if (e.clientX >= rect.left && e.clientX <= rect.right &&
-          e.clientY >= rect.top && e.clientY <= rect.bottom) {
-          targetLerpVal = 1.0;
-        } else {
-          targetLerpVal = 0.0;
-        }
-      });
-
-      // Mobile touch trigger
-      if (heroSection) {
-        heroSection.addEventListener('touchstart', () => {
-          targetLerpVal = 1.0;
-        }, { passive: true });
-      }
-
-      const clock = new THREE.Clock();
-
-      function renderLoop() {
-        requestAnimationFrame(renderLoop);
-
-        const time = clock.getElapsedTime();
-
-        lerpVal += (targetLerpVal - lerpVal) * 0.05;
-
-        for (let i = 0; i < particleCount; i++) {
-          const p = particles[i];
-          const ax = p.base_ax + Math.sin(time * p.driftSpeed + p.offset) * p.driftAmp;
-          const ay = p.base_ay + Math.cos(time * p.driftSpeed * 0.9 + p.offset) * p.driftAmp;
-          const az = p.base_az + Math.sin(time * p.driftSpeed * 1.1 + p.offset) * p.driftAmp;
-
-          p.mesh.position.x = THREE.MathUtils.lerp(ax, p.bx, lerpVal);
-          p.mesh.position.y = THREE.MathUtils.lerp(ay, p.by, lerpVal);
-          p.mesh.position.z = THREE.MathUtils.lerp(az, p.bz, lerpVal);
-        }
-
-        // Slowly rotate group system (0.001 rad/frame)
-        group.rotation.y += 0.001;
-
-        renderer.render(scene, camera);
-      }
-
-      renderLoop();
-
-      // Resize scene dynamically
-      window.addEventListener('resize', () => {
-        const w = container.clientWidth;
-        const h = container.clientHeight;
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
-      });
-    } else {
-      // WebGL support fallback display
-      const fallback = document.querySelector('.hero-fallback-gradient');
-      if (fallback) fallback.style.display = 'block';
-    }
-  </script>
-  <!-- Tally loader script -->
-  <script>
-    var d = document, w = "https://tally.so/widgets/embed.js",
-      v = function () {
-        "undefined" != typeof Tally ?
-          Tally.loadEmbeds() : d.querySelectorAll(
-            "iframe[data-tally-src]:not([src])").forEach(
-              function (e) { e.src = e.dataset.tallySrc })
-      };
-    if ("undefined" != typeof Tally) v();
-    else if (d.querySelector('script[src="' + w + '"]') == null) {
-      var s = d.createElement("script"); s.src = w;
-      s.onload = v; s.onerror = v; d.body.appendChild(s);
-    }
-  </script>
-
-  <a href="https://tally.so/r/WOQPkP" target="_blank" class="feedback-fab" aria-label="Send feedback">
-    Feedback
-  </a>
 </body>
 
 </html>

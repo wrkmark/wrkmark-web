@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://wrkmark.com/app.html">
+
+  <title>Wrkmark Observer — Prove how you work, not just what you make</title>
+  <meta name="description"
+    content="Wrkmark observes your work patterns and builds a verified behavioral profile. Open source. All data on your device.">
+
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Akshay Sharma">
+  <meta name="keywords"
+    content="behavioral verification, work tracking, skill verification, developer tools, professional profile, AI era, privacy-first">
+  <meta name="theme-color" content="#10b981">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wrkmark.com/app.html">
+  <meta property="og:title" content="Wrkmark Observer — Prove how you work">
+  <meta property="og:description" content="Prove how you work, not just what you make.">
+  <meta property="og:site_name" content="Wrkmark">
+  <meta property="og:image" content="https://wrkmark.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Wrkmark — Prove how you work">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wrkmark Observer — Prove how you work">
+  <meta name="twitter:description"
+    content="Behavioral verification for the AI era. Open source. All data on your device.">
+  <meta name="twitter:image" content="https://wrkmark.com/og-image.png">
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2310b981'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='%230a0f0d' font-weight='bold'%3EW%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts & Preconnect Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://tally.so">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Three.js CDN Setup -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    }
+  }
+  </script>
+
+  <style>
+    /* Reset & Theme Tokens (Light Mode Design System) */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --surface-2: #f3f4f6;
+      --surface-dark: #111827;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(16, 185, 129, 0.35);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --text: #111827;
+      --text-muted: #374151;
+      --text-2: #6b7280;
+      --emerald: #10b981;
+      --emerald-dark: #059669;
+      --emerald-dim: rgba(16, 185, 129, 0.08);
+      --rose: #e11d48;
+      --rose-dim: rgba(225, 29, 72, 0.08);
+
+      /* Type scale */
+      --type-hero: clamp(2.6rem, 5vw, 4.2rem);
+      --type-h2: clamp(1.6rem, 3vw, 2.25rem);
+      --type-body: 1rem;
+      --type-small: 0.875rem;
+      --type-mono: 0.8rem;
+
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.7;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    /* Top Beta Banner */
+    .beta-banner {
+      width: 100%;
+      background-color: var(--surface-dark);
+      color: #ffffff;
+      padding: 10px 16px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .beta-banner a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 6px;
+      transition: color 0.15s ease;
+    }
+
+    .beta-banner a:hover {
+      text-decoration: underline;
+      color: #34d399;
+    }
+
+    /* Container & Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 64px 0;
+      }
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--type-h2);
+      color: var(--text);
+      margin-bottom: 12px;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--type-body);
+      color: var(--text-2);
+      margin-bottom: 48px;
+    }
+
+    /* Primary and Secondary buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 13px 26px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--surface-dark);
+      color: #ffffff;
+      border: 1px solid var(--surface-dark);
+    }
+
+    .btn-primary:hover {
+      background-color: #1f2937;
+      border-color: #1f2937;
+    }
+
+    .btn-emerald {
+      background-color: var(--emerald);
+      color: #ffffff;
+      border: 1px solid var(--emerald);
+    }
+
+    .btn-emerald:hover {
+      background-color: var(--emerald-dark);
+      border-color: var(--emerald-dark);
+    }
+
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--text);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f9fafb;
+      border-color: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Sticky Navigation */
+    .nav-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      z-index: 1000;
+      background-color: rgba(249, 250, 251, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo-dot {
+      color: var(--emerald);
+      font-size: 12px;
+      margin-right: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: var(--type-small);
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-link-jobs {
+      color: var(--emerald-dark);
+      font-weight: 600;
+    }
+
+    .nav-link-jobs:hover {
+      color: var(--emerald);
+    }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.2s;
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      background: rgba(249, 250, 251, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      flex-direction: column;
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-mobile-menu a:hover {
+      color: var(--emerald-dark);
+    }
+
+    .nav-mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .nav-mobile-menu.open {
+      display: flex;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: calc(100vh - 110px);
+      display: flex;
+      align-items: center;
+      padding: 48px 0 80px 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 3.2fr 2.8fr;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 10;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--emerald-dark);
+      background: var(--emerald-dim);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: var(--type-hero);
+      color: var(--text);
+      line-height: 1.1;
+      font-weight: normal;
+    }
+
+    .cursor {
+      color: var(--emerald);
+      display: inline-block;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-body {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-2);
+      max-width: 480px;
+      margin-top: 20px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .hero-platforms-info {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-2);
+      margin-top: 16px;
+    }
+
+    .all-platforms-link {
+      color: var(--emerald-dark);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
+    .all-platforms-link:hover {
+      text-decoration: underline;
+    }
+
+    .hero-trust {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      opacity: 0.85;
+      margin-top: 20px;
+    }
+
+    /* Three.js Canvas Container */
+    .hero-canvas-container {
+      width: 100%;
+      height: 480px;
+      position: relative;
+      user-select: none;
+    }
+
+    .hero-canvas-container canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      outline: none;
+    }
+
+    .hero-fallback-gradient {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(249, 250, 251, 0) 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-left {
+        align-items: center;
+      }
+
+      .hero-canvas-container {
+        display: none;
+      }
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background-color: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 40px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      color: var(--emerald-dark);
+      line-height: 1.1;
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.5;
+      max-width: 210px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 80px;
+      background-color: var(--border);
+    }
+
+    .stats-source {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      opacity: 0.7;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .stats-grid {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .stat-divider {
+        display: none;
+      }
+
+      .stat-item {
+        padding: 0;
+      }
+    }
+
+    /* Signal Feed / Terminal Layout */
+    .signal-feed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .signal-left {
+      max-width: 440px;
+    }
+
+    .signal-body {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .terminal-window {
+      background-color: #0f172a;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      font-family: var(--font-mono);
+      padding: 24px;
+      min-height: 340px;
+      max-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .terminal-header .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .terminal-header .dot.red { background-color: #ff5f57; }
+    .terminal-header .dot.yellow { background-color: #ffbd2e; }
+    .terminal-header .dot.green { background-color: #28ca41; }
+
+    .terminal-content {
+      font-size: var(--type-mono);
+      line-height: 1.6;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      scrollbar-width: none;
+    }
+
+    .terminal-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    .terminal-line {
+      white-space: pre-wrap;
+      word-break: break-all;
+      display: flex;
+      transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease;
+      opacity: 1;
+      height: auto;
+    }
+
+    .term-time {
+      color: #64748b;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .term-type {
+      margin-right: 12px;
+      display: inline-block;
+      min-width: 170px;
+      flex-shrink: 0;
+    }
+
+    .term-type.emerald { color: #34d399; }
+    .term-type.rose { color: #fb7185; }
+
+    .term-val {
+      color: #f1f5f9;
+      display: inline-block;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+
+    .term-app { color: #94a3b8; }
+
+    .terminal-note-wrapper {
+      margin-top: 32px;
+      font-family: var(--font-body);
+      font-size: var(--type-small);
+      color: var(--text-2);
+    }
+
+    .terminal-note-wrapper a {
+      color: var(--emerald-dark);
+      text-decoration: underline;
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .signal-feed-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .signal-left {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* How It Works */
+    .section-how {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .how-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .how-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .how-icon-wrapper {
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--emerald-dim);
+      color: var(--emerald-dark);
+    }
+
+    .how-card-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .how-card-body {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .how-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Privacy Section */
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      max-width: 900px;
+      margin: 56px auto 0 auto;
+    }
+
+    .privacy-col {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .privacy-col-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      font-weight: normal;
+    }
+
+    .privacy-col.observe .privacy-col-title { color: var(--emerald-dark); }
+    .privacy-col.never-see .privacy-col-title { color: var(--rose); }
+
+    .privacy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .privacy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+    }
+
+    .privacy-bullet {
+      font-weight: bold;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .privacy-col.observe .privacy-bullet { color: var(--emerald-dark); }
+    .privacy-col.never-see .privacy-bullet { color: var(--rose); }
+
+    .privacy-text { color: var(--text-muted); }
+
+    .privacy-note {
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 900px;
+      margin: 36px auto 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .privacy-note pre {
+      margin-bottom: 16px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .privacy-note-link {
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      font-size: 0.8rem;
+    }
+
+    .privacy-note-link a {
+      color: var(--emerald-dark);
+      text-decoration: underline;
+      margin-left: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .privacy-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Open Source Section */
+    .section-os {
+      background-color: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .os-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--emerald-dark);
+      background: var(--emerald-dim);
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .os-body {
+      font-family: var(--font-body);
+      color: var(--text-2);
+      max-width: 540px;
+      margin: 16px auto 0 auto;
+      line-height: 1.7;
+    }
+
+    .os-stats {
+      font-family: var(--font-mono);
+      font-size: var(--type-mono);
+      color: var(--emerald-dark);
+      margin: 36px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .os-link {
+      color: var(--emerald-dark);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .os-link:hover {
+      text-decoration: underline;
+      color: var(--emerald);
+    }
+
+    /* Download Section */
+    .download-header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 920px;
+      margin: 48px auto 0 auto;
+    }
+
+    .download-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .download-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .download-card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .download-icon {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .download-platform-title {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .download-platform-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-2);
+      margin-bottom: 28px;
+    }
+
+    .download-btn {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .download-card-note {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      opacity: 0.85;
+    }
+
+    .install-note {
+      font-size: 0.72rem;
+      color: var(--text-2);
+      margin-top: 12px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      .download-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Collapsible Installation Guide */
+    .install-details {
+      margin-top: 48px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .install-summary {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--emerald-dark);
+      padding: 16px 24px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .install-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .install-content {
+      padding: 16px 24px 28px 24px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .install-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .install-platform h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-weight: normal;
+    }
+
+    .install-platform ol {
+      padding-left: 20px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    .install-platform li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Waitlist Section */
+    .section-waitlist {
+      background-color: #f3f4f6;
+      border-top: 1px solid var(--border);
+    }
+
+    .waitlist-body {
+      font-family: var(--font-body);
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 12px auto 0 auto;
+    }
+
+    .tally-wrapper {
+      max-width: 480px;
+      margin: 36px auto 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .waitlist-note {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background-color: #ffffff;
+      padding: 40px 0;
+      font-size: 0.9rem;
+      color: var(--text-2);
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo-dot {
+      color: var(--emerald);
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .footer-left-desc {
+      font-size: 0.8rem;
+      color: var(--text-2);
+    }
+
+    .footer-center {
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .footer-link {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    /* Floating Feedback Button */
+    .feedback-fab {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--emerald-dark);
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .feedback-fab:hover {
+      background: #f9fafb;
+      border-color: var(--emerald);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .feedback-fab {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="4c7cd50d-0b3a-4dc7-a996-ff2c0d6fa2c5"></script>
+</head>
+
+<body>
+  <!-- Top Beta Banner -->
+  <div class="beta-banner">
+    🔬 Wrkmark Observer is in beta — behavioral verification for professionals. The job platform is at <a href="https://jobs.wrkmark.com">jobs.wrkmark.com</a> &rarr;
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav-header">
+    <div class="container nav-container">
+      <a href="/app.html" class="nav-logo">
+        <span class="nav-logo-dot">●</span>Wrkmark
+      </a>
+      <nav class="nav-links">
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="nav-link"
+          title="View open source observer engine on GitHub">Open source</a>
+        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank" class="nav-link">GitHub</a>
+        <a href="#download" class="nav-link">Download</a>
+        <a href="https://jobs.wrkmark.com" class="nav-link nav-link-jobs">Wrkmark Jobs &rarr;</a>
+      </nav>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-mobile-menu" id="navMobile">
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank">Open source</a>
+        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank">GitHub</a>
+        <a href="#download">Download</a>
+        <a href="#waitlist">Join waitlist</a>
+        <a href="https://jobs.wrkmark.com" style="color:var(--emerald-dark); font-weight:600;">Wrkmark Jobs &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <span class="hero-eyebrow">Behavioral verification · v0.1.0 BETA</span>
+          <h1 class="hero-title">
+            Prove how you work,<br>not just what<br>you make.<span class="cursor">|</span>
+          </h1>
+          <p class="hero-body">
+            Wrkmark observes your work patterns and builds a verified behavioral profile. Typing rhythm. Focus depth.
+            Revision patterns. The signals that can't be faked.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg"
+              class="btn btn-emerald" id="hero-download-btn">Download for Mac ↓</a>
+            <a href="#waitlist" class="btn btn-secondary">Join waitlist</a>
+          </div>
+          <p class="hero-platforms-info">
+            Available for macOS, Windows, &amp; Linux. <a href="#download" class="all-platforms-link">See all platforms &rarr;</a>
+          </p>
+          <p class="hero-trust">
+            Open source · Privacy-first · All data on your device
+          </p>
+        </div>
+        <div class="hero-canvas-container" id="three-canvas-container" role="img"
+          aria-label="Interactive 3D particle visualization showing behavioral signals forming a profile">
+          <!-- Fallback Radial Gradient if WebGL disabled -->
+          <div class="hero-fallback-gradient"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">67%</div>
+          <div class="stat-label">of hiring managers can't verify real skills</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">41%</div>
+          <div class="stat-label">abandoned resume-first hiring entirely</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">bytes of your content ever leave your device</div>
+        </div>
+      </div>
+      <div class="stats-source">Source: Robert Half, 2026</div>
+    </div>
+  </section>
+
+  <!-- Signal Feed Section -->
+  <section class="section">
+    <div class="container">
+      <div class="signal-feed-grid">
+        <div class="signal-left">
+          <h2 class="section-title">What gets observed</h2>
+          <p class="signal-body">
+            Every signal Wrkmark captures. Nothing more is technically possible — the anonymizer rejects anything
+            outside these 8 types.
+          </p>
+          <div class="terminal-note-wrapper">
+            These are the ONLY signal types the observer accepts. Read the source:
+            <a href="https://github.com/wrkmark/wrkmark-observer/blob/main/src/processor/anonymizer.ts"
+              target="_blank">anonymizer.ts &rarr;</a>
+          </div>
+        </div>
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-content" aria-live="polite" aria-label="Live signal feed">
+            <!-- Appended lines stream here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section-how">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-subtitle">Installed in 2 minutes. No configuration required.</p>
+      </div>
+      <div class="how-grid">
+        <!-- Card 1: Eye / Watch -->
+        <div class="how-card">
+          <div class="how-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="how-card-title">Wrkmark watches</h3>
+          <p class="how-card-body">
+            Opens quietly in your menu bar. Detects which work app is in the foreground. Sessions start and stop
+            automatically — no manual tracking, no check-ins.
+          </p>
+        </div>
+
+        <!-- Card 2: Chart / Pattern -->
+        <div class="how-card">
+          <div class="how-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3 class="how-card-title">Patterns emerge</h3>
+          <p class="how-card-body">
+            Typing rhythm, session length, focus depth, AI tool usage. Not what you typed — the timing between
+            keystrokes. The behavioral fingerprint of how you actually work.
+          </p>
+        </div>
+
+        <!-- Card 3: Share / Arrow -->
+        <div class="how-card">
+          <div class="how-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+          <h3 class="how-card-title">Share your profile</h3>
+          <p class="how-card-body">
+            A verified profile at wrkmark.com/p/your-name. Share with anyone. Shows verified hours and behavioral
+            indicators — never your code or content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Section -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Privacy by architecture</h2>
+        <p class="section-subtitle">Constraints enforced in code. Not policy.</p>
+      </div>
+      <div class="privacy-grid">
+        <div class="privacy-col observe">
+          <h3 class="privacy-col-title">We observe</h3>
+          <ul class="privacy-list">
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">Time in work apps</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">Typing rhythm (intervals — not keys)</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">Session start and end</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">Pause and resume patterns</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">File switch count (not filenames)</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">Build run count (not commands)</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✓</span>
+              <span class="privacy-text">AI-native tool usage (app name only)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="privacy-col never-see">
+          <h3 class="privacy-col-title">We never see</h3>
+          <ul class="privacy-list">
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">What you type</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">File contents or names</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">URLs you visit</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">Passwords or clipboard</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">Screen content</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">Audio or video</span>
+            </li>
+            <li class="privacy-item">
+              <span class="privacy-bullet">✗</span>
+              <span class="privacy-text">Anything outside 8 signal types</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="privacy-note">
+        <pre><code>// anonymizer.ts rejects any signal not in this set:
+const APPROVED_TYPES = ['session_start', 'session_end',
+'typing_rhythm_bucket', 'pause_event', 'undo_event',
+'file_switch', 'ai_tool_opened', 'build_run']</code></pre>
+        <div class="privacy-note-link">
+          Read the implementation &rarr; <a
+            href="https://github.com/wrkmark/wrkmark-observer/blob/main/src/processor/anonymizer.ts"
+            target="_blank">anonymizer.ts on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source Section -->
+  <section class="section-os">
+    <div class="container">
+      <span class="os-eyebrow">OPEN SOURCE · MIT LICENSE</span>
+      <h2 class="section-title">Read it before you trust it.</h2>
+      <p class="os-body">
+        The observation engine — every signal type, every privacy check, every audit entry — is open source. 69 tests
+        passing. Verified by anyone.
+      </p>
+      <div class="os-stats">
+        69 tests passing &middot; MIT license &middot; v0.1.2
+      </div>
+      <div>
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="os-link">View wrkmark-observer on
+          GitHub &rarr;</a>
+      </div>
+      <div style="margin-top: 16px">
+        <a href="https://github.com/wrkmark/wrkmark-observer/discussions" target="_blank"
+          style="color: var(--text-2); font-family: 'Inter', sans-serif; font-size: 0.875rem; text-decoration: none; border-bottom: 1px solid var(--border);">
+          Join the discussion &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="text-center">
+        <!-- 1. App Icon inline SVG (32x32) -->
+        <div class="download-header-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#10b981" />
+            <text x="16" y="22" text-anchor="middle" font-family="serif" font-size="18" fill="#ffffff" font-weight="bold">W</text>
+          </svg>
+        </div>
+        <h2 class="section-title">Download Wrkmark Observer</h2>
+        <p class="section-subtitle">v0.1.0 beta · Free · Open source</p>
+      </div>
+      <div class="download-grid">
+        <!-- macOS -->
+        <div class="download-card">
+          <div class="download-card-top">
+            <div class="download-icon">
+              <!-- Apple Logo SVG -->
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              </svg>
+            </div>
+            <h3 class="download-platform-title">macOS</h3>
+            <span class="download-platform-subtitle">Apple Silicon · arm64</span>
+          </div>
+          <div>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg"
+              class="btn btn-emerald download-btn" aria-label="Download Wrkmark for macOS">Download .dmg</a>
+            <p class="install-note">
+              First time opening: macOS may note the app is unverified (code signing certificate pending). Right-click Wrkmark &rarr; Open &rarr; click "Open".
+            </p>
+          </div>
+        </div>
+
+        <!-- Windows -->
+        <div class="download-card">
+          <div class="download-card-top">
+            <div class="download-icon">
+              <!-- Clean Windows logo SVG (4 colored squares) -->
+              <svg viewBox="0 0 24 24" width="32" height="32">
+                <rect x="3" y="3" width="8.5" height="8.5" fill="#f25022" />
+                <rect x="12.5" y="3" width="8.5" height="8.5" fill="#7fba00" />
+                <rect x="3" y="12.5" width="8.5" height="8.5" fill="#00a4ef" />
+                <rect x="12.5" y="12.5" width="8.5" height="8.5" fill="#ffb900" />
+              </svg>
+            </div>
+            <h3 class="download-platform-title">Windows</h3>
+            <span class="download-platform-subtitle">Windows · x64</span>
+          </div>
+          <div>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe"
+              class="btn btn-emerald download-btn" aria-label="Download Wrkmark for Windows">Download .exe</a>
+            <p class="install-note">
+              Windows SmartScreen may flag app as unrecognized. Click "More info" then "Run anyway" to proceed safely.
+            </p>
+          </div>
+        </div>
+
+        <!-- Linux -->
+        <div class="download-card">
+          <div class="download-card-top">
+            <div class="download-icon">
+              <!-- Linux Terminal Prompt SVG >_ -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" stroke="#10b981" fill="rgba(16,185,129,0.08)"></circle>
+                <polyline points="8 9 11 12 8 15"></polyline>
+                <line x1="13" y1="15" x2="16" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="download-platform-title">Linux</h3>
+            <span class="download-platform-subtitle">Linux · x64 AppImage</span>
+          </div>
+          <div>
+            <a href="https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage"
+              class="btn btn-emerald download-btn" aria-label="Download Wrkmark for Linux">Download .AppImage</a>
+            <div class="download-card-note">chmod +x then run directly</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Installation Guide -->
+      <details class="install-details">
+        <summary class="install-summary">
+          <span>Installation guide</span>
+          <span>↓</span>
+        </summary>
+        <div class="install-content">
+          <div class="install-platform">
+            <h4>macOS</h4>
+            <ol>
+              <li>Download the <code>.dmg</code> file from the link above.</li>
+              <li>Double-click the downloaded file to mount the disk image.</li>
+              <li>Drag the Wrkmark app icon into your <code>Applications</code> folder.</li>
+              <li>Right-click the app in your Applications folder and select <strong>Open</strong> to start.</li>
+            </ol>
+          </div>
+          <div class="install-platform">
+            <h4>Windows</h4>
+            <ol>
+              <li>Download the <code>.exe</code> setup installer.</li>
+              <li>Double-click the installer file to launch the wizard.</li>
+              <li>If Microsoft Defender SmartScreen warns you, click <strong>More info</strong> and select <strong>Run anyway</strong>.</li>
+              <li>Follow the steps to complete installation.</li>
+            </ol>
+          </div>
+          <div class="install-platform">
+            <h4>Linux</h4>
+            <ol>
+              <li>Download the <code>.AppImage</code> file.</li>
+              <li>Open terminal to make the file executable: <code>chmod +x Wrkmark-0.1.0.AppImage</code>.</li>
+              <li>Run the AppImage file directly in your shell or file manager.</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Waitlist Section -->
+  <section class="section section-waitlist" id="waitlist">
+    <div class="container text-center">
+      <h2 class="section-title">Not ready to install?</h2>
+      <p class="waitlist-body">
+        Join the waitlist. We'll let you know when the next version ships. No spam, ever.
+      </p>
+      <div class="tally-wrapper">
+        <iframe
+          data-tally-src="https://tally.so/embed/RGr67v?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy" width="100%" height="120" frameborder="0" marginheight="0" marginwidth="0"
+          title="Join Wrkmark waitlist"></iframe>
+      </div>
+      <p class="waitlist-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="/app.html" class="footer-logo">
+          <span class="footer-logo-dot">●</span>Wrkmark Observer
+        </a>
+        <span class="footer-left-desc">Behavioral verification for professionals.</span>
+      </div>
+      <div class="footer-center">
+        Built in Vadodara, India 🇮🇳
+      </div>
+      <div class="footer-links">
+        <a href="https://jobs.wrkmark.com" class="footer-link">Wrkmark Jobs</a>
+        <span>&middot;</span>
+        <a href="https://github.com/wrkmark/wrkmark-observer" target="_blank" class="footer-link">Observer Engine</a>
+        <span>&middot;</span>
+        <a href="https://github.com/wrkmark/wrkmark-app" target="_blank" class="footer-link">App Source</a>
+        <span>&middot;</span>
+        <a href="/privacy.html" class="footer-link">Privacy</a>
+        <span>&middot;</span>
+        <a href="/terms.html" class="footer-link">Terms</a>
+        <span>&middot;</span>
+        <a href="/refund.html" class="footer-link">Refund</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Terminal Streaming Script & Mobile Nav -->
+  <script>
+    const signals = [
+      { type: 'session_start', value: null, app: 'Visual Studio Code' },
+      { type: 'typing_rhythm_bucket', value: 3, app: 'VS Code' },
+      { type: 'typing_rhythm_bucket', value: 7, app: 'VS Code' },
+      { type: 'pause_event', value: 47, app: 'VS Code' },
+      { type: 'file_switch', value: 1, app: 'VS Code' },
+      { type: 'typing_rhythm_bucket', value: 2, app: 'Cursor' },
+      { type: 'ai_tool_opened', value: 1, app: 'Antigravity IDE' },
+      { type: 'undo_event', value: 1, app: 'VS Code' },
+      { type: 'build_run', value: 1, app: 'VS Code' },
+      { type: 'pause_event', value: 183, app: 'VS Code' },
+      { type: 'typing_rhythm_bucket', value: 12, app: 'Cursor' },
+      { type: 'session_end', value: null, app: 'Visual Studio Code' },
+    ];
+
+    function getFormattedTime() {
+      const now = new Date();
+      return now.toTimeString().split(' ')[0];
+    }
+
+    function appendLogLine() {
+      const terminalBody = document.querySelector('.terminal-content');
+      if (!terminalBody) return;
+
+      const signal = signals[Math.floor(Math.random() * signals.length)];
+
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+
+      const timeSpan = document.createElement('span');
+      timeSpan.className = 'term-time';
+      timeSpan.textContent = `[${getFormattedTime()}]`;
+
+      const typeSpan = document.createElement('span');
+      typeSpan.className = `term-type ${signal.type === 'session_end' ? 'rose' : 'emerald'}`;
+      typeSpan.textContent = signal.type.padEnd(22, ' ');
+
+      const valSpan = document.createElement('span');
+      valSpan.className = 'term-val';
+      valSpan.textContent = signal.value === null ? 'null'.padEnd(8, ' ') : String(signal.value).padEnd(8, ' ');
+
+      const appSpan = document.createElement('span');
+      appSpan.className = 'term-app';
+      appSpan.textContent = signal.app;
+
+      line.appendChild(timeSpan);
+      line.appendChild(typeSpan);
+      line.appendChild(valSpan);
+      line.appendChild(appSpan);
+
+      terminalBody.appendChild(line);
+
+      const lines = terminalBody.querySelectorAll('.terminal-line');
+      if (lines.length > 12) {
+        for (let i = 0; i < lines.length - 12; i++) {
+          lines[i].style.opacity = '0';
+          lines[i].style.height = '0';
+          lines[i].style.margin = '0';
+          setTimeout(() => {
+            lines[i].remove();
+          }, 500);
+        }
+      }
+
+      terminalBody.scrollTo({
+        top: terminalBody.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // OS Detection
+      const heroDownloadBtn = document.getElementById('hero-download-btn');
+      if (heroDownloadBtn) {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        let downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0-arm64.dmg';
+        let btnText = 'Download for Mac ↓';
+
+        if (userAgent.indexOf('win') !== -1) {
+          downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark.Setup.0.1.0.exe';
+          btnText = 'Download for Windows ↓';
+        } else if (userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
+          downloadUrl = 'https://github.com/wrkmark/wrkmark-app/releases/download/v0.1.0/Wrkmark-0.1.0.AppImage';
+          btnText = 'Download for Linux ↓';
+        } else if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+          downloadUrl = '#download';
+          btnText = 'Download Beta ↓';
+        }
+
+        heroDownloadBtn.href = downloadUrl;
+        heroDownloadBtn.textContent = btnText;
+      }
+
+      appendLogLine();
+      setInterval(appendLogLine, 1800);
+
+      // Mobile Menu Toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMobile = document.getElementById('navMobile');
+      if (navToggle && navMobile) {
+        navToggle.addEventListener('click', function () {
+          const isOpen = navMobile.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        navMobile.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            navMobile.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Three.js Particle System (Adapted for Light Background) -->
+  <script type="module">
+    import * as THREE from 'three';
+
+    function hasWebGL() {
+      try {
+        const canvas = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+      } catch (e) {
+        return false;
+      }
+    }
+
+    const container = document.getElementById('three-canvas-container');
+    if (container && hasWebGL()) {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+
+      // Camera
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+      camera.position.z = 6.0;
+
+      // Renderer
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      // Materials adapted for Light Mode: Dark Emerald & Slate Grey
+      const emeraldMat = new THREE.MeshBasicMaterial({
+        color: 0x059669,
+        transparent: true,
+        opacity: 0.85
+      });
+
+      const greyMat = new THREE.MeshBasicMaterial({
+        color: 0x64748b,
+        transparent: true,
+        opacity: 0.55
+      });
+
+      const sphereGeom = new THREE.SphereGeometry(0.08, 5, 5);
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const particleCount = 800;
+      const particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        // STATE A: Cloud
+        const r = Math.random() * 2.2 + 0.3;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(Math.random() * 2 - 1);
+
+        const ax = r * Math.sin(phi) * Math.cos(theta);
+        const ay = r * Math.sin(phi) * Math.sin(theta);
+        const az = r * Math.cos(phi);
+
+        // Drift params
+        const driftSpeed = 0.4 + Math.random() * 0.8;
+        const driftAmp = 0.12 + Math.random() * 0.12;
+        const offset = Math.random() * Math.PI * 2;
+
+        // STATE B: Card
+        let bx, by, bz;
+        bz = (Math.random() - 0.5) * 0.05;
+
+        if (i < 150) {
+          // Border outline (rounded rect w=3.4, h=2.4)
+          const t = (i / 150) * Math.PI * 2;
+          const cosT = Math.cos(t);
+          const sinT = Math.sin(t);
+          const w_half = 1.7;
+          const h_half = 1.2;
+          const radius = 0.25;
+          bx = Math.sign(cosT) * (w_half - radius) + cosT * radius;
+          by = Math.sign(sinT) * (h_half - radius) + sinT * radius;
+        } else if (i < 320) {
+          // Avatar circle on the left
+          const t = ((i - 150) / 170) * Math.PI * 2;
+          const r_val = Math.random() * 0.4;
+          bx = -0.85 + Math.cos(t) * r_val;
+          by = 0.1 + Math.sin(t) * r_val;
+        } else if (i < 550) {
+          // Card body scattered
+          const w_half = 1.6;
+          const h_half = 1.1;
+          bx = (Math.random() - 0.5) * w_half * 2;
+          by = (Math.random() - 0.5) * h_half * 2;
+        } else {
+          // Text lines on the right side
+          const lineIndex = (i - 550) % 3;
+          const xStart = -0.25;
+          const xEnd = lineIndex === 2 ? 0.6 : 1.3;
+          const t = Math.random();
+          bx = xStart + t * (xEnd - xStart);
+          by = 0.4 - lineIndex * 0.4 + (Math.random() - 0.5) * 0.03;
+        }
+
+        const size = 0.04 + Math.random() * 0.08;
+        const scale = size / 0.08;
+
+        const isEmerald = Math.random() < 0.6;
+        const mat = isEmerald ? emeraldMat : greyMat;
+
+        const mesh = new THREE.Mesh(sphereGeom, mat);
+        mesh.scale.set(scale, scale, scale);
+        group.add(mesh);
+
+        particles.push({
+          mesh,
+          base_ax: ax, base_ay: ay, base_az: az,
+          driftSpeed, driftAmp, offset,
+          bx, by, bz
+        });
+      }
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0x10b981, 2.0, 100);
+      pointLight.position.set(2, 2, 2);
+      scene.add(pointLight);
+
+      let lerpVal = 0.0;
+      let targetLerpVal = 0.0;
+
+      const heroSection = document.querySelector('.hero-section');
+
+      document.addEventListener('mousemove', (e) => {
+        if (!heroSection) return;
+        const rect = heroSection.getBoundingClientRect();
+        if (e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom) {
+          targetLerpVal = 1.0;
+        } else {
+          targetLerpVal = 0.0;
+        }
+      });
+
+      if (heroSection) {
+        heroSection.addEventListener('touchstart', () => {
+          targetLerpVal = 1.0;
+        }, { passive: true });
+      }
+
+      const clock = new THREE.Clock();
+
+      function renderLoop() {
+        requestAnimationFrame(renderLoop);
+
+        const time = clock.getElapsedTime();
+        lerpVal += (targetLerpVal - lerpVal) * 0.05;
+
+        for (let i = 0; i < particleCount; i++) {
+          const p = particles[i];
+          const ax = p.base_ax + Math.sin(time * p.driftSpeed + p.offset) * p.driftAmp;
+          const ay = p.base_ay + Math.cos(time * p.driftSpeed * 0.9 + p.offset) * p.driftAmp;
+          const az = p.base_az + Math.sin(time * p.driftSpeed * 1.1 + p.offset) * p.driftAmp;
+
+          p.mesh.position.x = THREE.MathUtils.lerp(ax, p.bx, lerpVal);
+          p.mesh.position.y = THREE.MathUtils.lerp(ay, p.by, lerpVal);
+          p.mesh.position.z = THREE.MathUtils.lerp(az, p.bz, lerpVal);
+        }
+
+        group.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      }
+
+      renderLoop();
+
+      window.addEventListener('resize', () => {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      });
+    } else {
+      const fallback = document.querySelector('.hero-fallback-gradient');
+      if (fallback) fallback.style.display = 'block';
+    }
+  </script>
+
+  <!-- Tally loader script -->
+  <script>
+    var d = document, w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        "undefined" != typeof Tally ?
+          Tally.loadEmbeds() : d.querySelectorAll(
+            "iframe[data-tally-src]:not([src])").forEach(
+              function (e) { e.src = e.dataset.tallySrc })
+      };
+    if ("undefined" != typeof Tally) v();
+    else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script"); s.src = w;
+      s.onload = v; s.onerror = v; d.body.appendChild(s);
+    }
+  </script>
+
+  <a href="https://tally.so/r/WOQPkP" target="_blank" class="feedback-fab" aria-label="Send feedback">
+    Feedback
+  </a>
+</body>
+
+</html>
