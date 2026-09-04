@@ -734,13 +734,6 @@
       }
     }
   </style>
-
-  <!-- Umami Analytics (privacy-first, no cookies) -->
-  <script
-    async
-    src="https://cloud.umami.is/script.js"
-    data-website-id="WEBSITE_ID_PLACEHOLDER">
-  </script>
 </head>
 
 <body>
@@ -897,8 +890,10 @@
             <div class="prop-subtitle emerald">Get discovered.</div>
 
             <div style="margin:-12px 0 20px;">
-              <div style="font-size:1.125rem;font-weight:600;color:var(--text);">₹99/year &middot; $9/year globally</div>
-              <div style="font-size:0.8125rem;color:var(--text-2);margin-top:2px;">Price varies by region</div>
+              <div style="font-size:1.125rem;font-weight:600;color:var(--text);" id="candidate-price">From $9/year</div>
+              <span style="font-size:11px;color:#9ca3af;display:block;margin-top:2px;">
+                Price detected from your location
+              </span>
               <span style="font-size:11px;color:#9ca3af;">
                 Non-refundable &middot; Renews annually
               </span>
@@ -907,7 +902,7 @@
             <ul class="prop-features-list">
               <li class="prop-feature-item">
                 <span class="check-mark">✓</span>
-                <span>From ₹99/year &middot; $9/year globally</span>
+                <span class="candidate-price-display">From $9/year</span>
               </li>
               <li class="prop-feature-item">
                 <span class="check-mark">✓</span>
@@ -962,8 +957,10 @@
             <div class="prop-subtitle dark">Get your shortlist.</div>
 
             <div style="margin:-12px 0 20px;">
-              <div style="font-size:1.125rem;font-weight:600;color:var(--text);">from $149/post</div>
-              <div style="font-size:0.8125rem;color:var(--text-2);margin-top:2px;">₹5,000 in India &middot; $149 globally</div>
+              <div style="font-size:1.125rem;font-weight:600;color:var(--text);" id="company-price">From $149/post</div>
+              <span style="font-size:11px;color:#9ca3af;display:block;margin-top:2px;">
+                Price detected from your location
+              </span>
             </div>
 
             <ul class="prop-features-list">
@@ -1001,7 +998,7 @@
     <div class="container">
       <div class="stats-flex">
         <div class="stat-box">
-          <div class="stat-number-serif emerald">from $149</div>
+          <div class="stat-number-serif emerald" id="stats-price">from $149</div>
           <div class="stat-label-light">per job post &mdash; one time</div>
         </div>
         <div class="stat-vertical-divider"></div>
@@ -1167,6 +1164,86 @@
         });
       }
     });
+  </script>
+
+  <script>
+  (function() {
+    const CANDIDATE_PRICES = {
+      INR: '₹99/year',
+      EUR: '€8/year',
+      GBP: '£7/year',
+      AUD: 'A$12/year',
+      CAD: 'CA$12/year',
+      AED: 'AED 25/year',
+      USD: '$9/year',
+    };
+
+    const COMPANY_PRICES = {
+      INR: '₹5,000/post',
+      USD: '$149/post',
+    };
+
+    const STATS_PRICES = {
+      INR: '₹5,000',
+      USD: '$149',
+    };
+
+    function updatePrices(currency) {
+      const cur = currency.toUpperCase();
+
+      const candidateEl = document.getElementById(
+        'candidate-price');
+      if (candidateEl) {
+        candidateEl.textContent =
+          CANDIDATE_PRICES[cur] || CANDIDATE_PRICES.USD;
+      }
+
+      const companyEl = document.getElementById(
+        'company-price');
+      if (companyEl) {
+        companyEl.textContent =
+          COMPANY_PRICES[cur] ||
+          COMPANY_PRICES.USD;
+      }
+
+      const statsEl = document.getElementById(
+        'stats-price');
+      if (statsEl) {
+        statsEl.textContent =
+          STATS_PRICES[cur] || STATS_PRICES.USD;
+      }
+
+      // Update any other pricing elements
+      // with class 'candidate-price-display'
+      document.querySelectorAll(
+        '.candidate-price-display'
+      ).forEach(el => {
+        el.textContent =
+          CANDIDATE_PRICES[cur] ||
+          CANDIDATE_PRICES.USD;
+      });
+
+      document.querySelectorAll(
+        '.company-price-display'
+      ).forEach(el => {
+        el.textContent =
+          COMPANY_PRICES[cur] ||
+          COMPANY_PRICES.USD;
+      });
+    }
+
+    // Detect currency via ipapi.co (free, no key)
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        if (data && data.currency) {
+          updatePrices(data.currency);
+        }
+      })
+      .catch(function() {
+        // Silently fail — defaults already set
+      });
+  })();
   </script>
 </body>
 
