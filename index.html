@@ -735,7 +735,12 @@
     }
   </style>
 
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="4c7cd50d-0b3a-4dc7-a996-ff2c0d6fa2c5"></script>
+  <!-- Umami Analytics (privacy-first, no cookies) -->
+  <script
+    async
+    src="https://cloud.umami.is/script.js"
+    data-website-id="WEBSITE_ID_PLACEHOLDER">
+  </script>
 </head>
 
 <body>
@@ -768,7 +773,7 @@
         <a href="/app.html">Wrkmark Observer</a>
         <a href="https://jobs.wrkmark.com/login?type=candidate">Find Work (Candidate)</a>
         <a href="https://jobs.wrkmark.com/login?type=company" style="color:var(--accent-dark); font-weight:600;">Post a
-          Job ($99)</a>
+          Job</a>
       </div>
     </div>
   </header>
@@ -788,11 +793,11 @@
           Companies reach out. Candidates choose to respond.
         </p>
         <div class="hero-cta-row">
-          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job — $99</a>
-          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline">Join as Candidate (Free)</a>
+          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job &rarr;</a>
+          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline">Join as Candidate</a>
         </div>
         <div class="hero-trust-line">
-          Free for candidates &middot; $99 per job post &middot; Top 15 matched candidates guaranteed
+          ₹99/year (India) &middot; $9/year (Global) &middot; From ₹5,000/post (India) &middot; $149/post (Global) &middot; Top 15 matched candidates guaranteed
         </div>
       </div>
     </div>
@@ -821,7 +826,7 @@
           </div>
           <h3 class="step-title">Companies post roles</h3>
           <p class="step-body">
-            Describe the role with exact salary, skills required, and working hours. $99 per post. Goes live instantly.
+            Describe the role with exact salary, skills required, and working hours. From ₹5,000/post (India) &middot; $149/post (Global). Goes live instantly.
           </p>
         </div>
 
@@ -891,10 +896,18 @@
             <h3 class="prop-title">Build your profile once.</h3>
             <div class="prop-subtitle emerald">Get discovered.</div>
 
+            <div style="margin:-12px 0 20px;">
+              <div style="font-size:1.125rem;font-weight:600;color:var(--text);">₹99/year &middot; $9/year globally</div>
+              <div style="font-size:0.8125rem;color:var(--text-2);margin-top:2px;">Price varies by region</div>
+              <span style="font-size:11px;color:#9ca3af;">
+                Non-refundable &middot; Renews annually
+              </span>
+            </div>
+
             <ul class="prop-features-list">
               <li class="prop-feature-item">
                 <span class="check-mark">✓</span>
-                <span>Free forever &mdash; no hidden costs</span>
+                <span>From ₹99/year &middot; $9/year globally</span>
               </li>
               <li class="prop-feature-item">
                 <span class="check-mark">✓</span>
@@ -913,9 +926,16 @@
                 <span>Your data never sold</span>
               </li>
             </ul>
+
+            <p style="font-size:12px;color:#9ca3af;margin:0 0 16px;line-height:1.5;">
+              Subscription fees grant access to the platform.
+              Job matching and company outreach are not guaranteed.
+              Wrkmark Jobs is a discovery platform, not a
+              placement agency.
+            </p>
           </div>
 
-          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-emerald btn-block">Create Free Profile
+          <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-emerald btn-block">Create Profile
             &rarr;</a>
         </div>
 
@@ -941,6 +961,11 @@
             <h3 class="prop-title">Post once.</h3>
             <div class="prop-subtitle dark">Get your shortlist.</div>
 
+            <div style="margin:-12px 0 20px;">
+              <div style="font-size:1.125rem;font-weight:600;color:var(--text);">from $149/post</div>
+              <div style="font-size:0.8125rem;color:var(--text-2);margin-top:2px;">₹5,000 in India &middot; $149 globally</div>
+            </div>
+
             <ul class="prop-features-list">
               <li class="prop-feature-item">
                 <span class="check-mark">✓</span>
@@ -965,8 +990,7 @@
             </ul>
           </div>
 
-          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark btn-block">Post a Job — $99
-            &rarr;</a>
+          <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark btn-block">Post a Job &rarr;</a>
         </div>
       </div>
     </div>
@@ -977,7 +1001,7 @@
     <div class="container">
       <div class="stats-flex">
         <div class="stat-box">
-          <div class="stat-number-serif emerald">$99</div>
+          <div class="stat-number-serif emerald">from $149</div>
           <div class="stat-label-light">per job post &mdash; one time</div>
         </div>
         <div class="stat-vertical-divider"></div>
@@ -1058,7 +1082,7 @@
       <h2 class="final-cta-heading">Ready to hire differently?</h2>
       <p class="final-cta-sub">Join the hiring platform that respects everyone's time.</p>
       <div class="hero-cta-row">
-        <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job — $99</a>
+        <a href="https://jobs.wrkmark.com/login?type=company" class="btn btn-dark">Post a Job &rarr;</a>
         <a href="https://jobs.wrkmark.com/login?type=candidate" class="btn btn-outline">Join as Candidate</a>
       </div>
     </div>
@@ -1106,7 +1130,21 @@
       </div>
 
       <div class="footer-bottom-row">
-        &copy; 2026 Wrkmark Jobs &middot; Built in India 🇮🇳
+        <div>
+          <a href="/privacy.html" style="color:inherit;text-decoration:none;margin-right:12px;">Privacy</a> &middot;
+          <a href="/terms.html" style="color:inherit;text-decoration:none;margin:0 12px;">Terms</a> &middot;
+          <a href="/refund.html" style="color:inherit;text-decoration:none;margin-left:12px;font-weight:500;">Refund Policy</a>
+        </div>
+        <p style="font-size:11px;color:#9ca3af;margin-top:8px;line-height:1.6;">
+          Subscription fees are non-refundable after
+          activation. Job post fees are refundable within
+          24 hours if the post has not gone live.
+          Wrkmark Jobs does not guarantee interviews,
+          offers, or employment.
+        </p>
+        <div style="margin-top:8px;">
+          &copy; 2026 Wrkmark Jobs &middot; Built in India 🇮🇳
+        </div>
       </div>
     </div>
   </footer>
